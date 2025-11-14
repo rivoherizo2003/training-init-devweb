@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(242 242 242);
+}
+
+.header{
+display:flex;
+}
+.card-info{
+    background-color: #fffffffc;
+    padding: 10px;
+}
+
+.img-profile{
+    width:100px;
+    height: 100px;
+}

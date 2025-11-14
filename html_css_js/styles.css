@@ -1,0 +1,40 @@
+html{
+    box-sizing: border-box;
+}
+
+ body {
+     background-color: yellow;
+ }
+
+ p {
+     font-style: italic;
+ }
+
+ h1,
+ h2 {
+     color: blue;
+ }
+
+ .text-footer {
+     color: white;
+     font-style: normal;
+ }
+
+ #txt-username {
+     background-color: gray;
+ }
+
+ .bg-green {
+     background-color: green;
+ }
+
+ a:hover {
+     color: red;
+ }
+
+ p>span {
+     background-color: brown;
+ }
+
+
+

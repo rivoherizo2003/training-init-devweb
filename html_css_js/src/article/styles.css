@@ -1,0 +1,36 @@
+body{
+    background-color: #f1f1f1;
+    font-size: 14px;
+}
+
+.container{
+    margin: 0px 100px 0px 100px;
+}
+
+.header{
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.img-illustration{
+    width: 50%;
+    margin: 20px;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-left{
+    float: left;
+}
+
+.intro{
+    text-align: justify;
+    line-height: 2rem;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}

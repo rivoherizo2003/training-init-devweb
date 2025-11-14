@@ -1,0 +1,45 @@
+/* Réinitialisation de base et style du corps */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Style de l'en-tête et de la navigation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style-type: none; /* Supprime les puces */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centre les éléments du menu */
+}
+
+nav ul li {
+    display: inline; /* Affiche les éléments sur la même ligne */
+    margin: 0 15px; /* Ajoute un peu d'espace entre les éléments */
+}
+
+nav ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease; /* Ajoute une transition douce pour le survol */
+}
+
+/* Effet au survol des liens du menu */
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px; /* Ajoute des bords arrondis au survol */
+}
+
+/* Style du contenu principal pour le centrer */
+main {
+    padding: 2rem;
+    text-align: center;
+}

@@ -1,0 +1,69 @@
+@import "fonts.css";
+body,
+html {
+    background-color: #F0F1F3;
+    height: 100vh;
+    /* Une zone d'affichage (aussi appelée viewport en anglais) représente la zone actuellement visible sur l'appareil */
+    margin: 0;
+    padding: 0;
+    font-family: "inter", sans-serif;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.img-profile{
+    width: 40px;
+}
+
+/* * Correspond à "Display sm"
+ * 30px / 1.875rem | Line height 38px / 2.375rem
+ */
+.text-display-sm-bold {
+    font-size: 1.875rem;
+    /* 30px */
+    line-height: 1.26;
+    /* 38px / 30px */
+    font-weight: 700;
+    /* Bold */
+}
+
+.text-display-sm-semibold {
+    font-size: 1.875rem;
+    line-height: 1.26;
+    font-weight: 600;
+    /* Semibold */
+}
+
+/* * Correspond à "Text lg"
+ * 18px / 1.125rem | Line height 28px / 1.75rem
+ */
+.text-lg-bold {
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.55;
+    /* 28px / 18px */
+    font-weight: 700;
+    /* Bold */
+}
+
+.text-lg-regular {
+    font-size: 1.125rem;
+    line-height: 1.55;
+    font-weight: 400;
+    /* Regular */
+}
+
+/* * Correspond à "Text md"
+ * 16px / 1rem | Line height 24px / 1.5rem
+ */
+.text-md-medium {
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.5;
+    /* 24px / 16px */
+    font-weight: 500;
+    /* Medium */
+}

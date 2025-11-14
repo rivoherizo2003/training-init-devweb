@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Facture</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="invoice-container">
+        <h1>Création d'une nouvelle facture</h1>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Informations Générales</legend>
+                <div class="form-group">
+                    <label for="invoice_num">Numéro de facture :</label>
+                    <input type="text" id="invoice_num" name="invoice_num" placeholder="ex: FACT2025-001" required>
+                </div>
+                <div class="form-group">
+                    <label for="invoice_date">Date de la facture :</label>
+                    <input type="date" id="invoice_date" name="invoice_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Commentaire :</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Ajoutez une note ou des conditions de paiement..."></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Options de Facturation</legend>
+                <div class="form-group">
+                    <label>Inclure la TVA (20%) :</label>
+                    <div class="radio-group">
+                        <input type="radio" id="tva_yes" name="tva_option" value="yes" checked> <label for="tva_yes">Oui</label>
+                        <input type="radio" id="tva_no" name="tva_option" value="no"> <label for="tva_no">Non</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="client_email">Email du client :</label>
+                    <input type="email" id="client_email" name="client_email" placeholder="exemple@client.com" required>
+                </div>
+                 <div class="form-group">
+                    <label for="amount_paid">Montant payé par le client (€) :</label>
+                    <input type="number" id="amount_paid" name="amount_paid" min="0" step="0.01" placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label for="payment_method">Méthode de paiement :</label>
+                    <select id="payment_method" name="payment_method">
+                        <option value="cc">Carte de crédit</option>
+                        <option value="transfer">Virement bancaire</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="cash">Espèces</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Actions Finales</legend>
+                <div class="form-group checkbox-group">
+                     <input type="checkbox" id="print_invoice" name="print_invoice">
+                     <label for="print_invoice">Imprimer la facture après enregistrement</label>
+                </div>
+            </fieldset>
+        </form>
+
+        <h2>Détails des Produits</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description du Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire (€)</th>
+                    <th>Total (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Création de logo personnalisé</td>
+                    <td>1</td>
+                    <td>450.00</td>
+                    <td>450.00</td>
+                </tr>
+                <tr>
+                    <td>Développement de la page d'accueil</td>
+                    <td>1</td>
+                    <td>800.00</td>
+                    <td>800.00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Général</td>
+                    <td>1250.00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Enregistrer la Facture</button>
+            <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+        </div>
+    </div>
+
+</body>
+</html>

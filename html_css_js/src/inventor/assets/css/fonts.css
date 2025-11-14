@@ -1,0 +1,7 @@
+@font-face{
+    font-family: "inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../inventor/assets/fonts/Inter-Regular.woff2") format("woff2");
+}

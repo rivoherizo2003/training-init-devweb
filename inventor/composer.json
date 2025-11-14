@@ -1,0 +1,17 @@
+{
+    "name": "codemdg/classman",
+    "description": "Native PHP web application, managing school",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "codeMDG",
+            "email": "rivoherizo2003@gmail.com"
+        }
+    ],
+    "require": {}
+}
