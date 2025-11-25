@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "league-spartan";
+  src: url("/fonts/LeagueSpartan-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+:root {
+  --navy-850: hsl(222, 26%, 31%);
+  --red-600: hsl(6, 63%, 50%);
+  --red-800: hsl(6, 70%, 34%);
+  --navy-900: hsl(223, 31%, 20%);
+  --navy-950: hsl(224, 36%, 15%);
+  --navy-700: hsl(225, 21%, 49%);
+  --navy-800: hsl(224, 28%, 35%);
+  --navy-750: hsl(221, 14%, 31%);
+  --gray-200: hsl(0, 0%, 90%);
+  --gray-orange-400: hsl(28, 16%, 65%);
+  --text-white: hsl(0, 100%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "league-spartan", sans-serif;
+}
+
+body {
+  padding-top: 1.5rem;
+  background-color: var(--navy-850);
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+/***** HEADER ***/
+header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.theme {
+  font-weight: bold;
+  font-size: 0.5rem;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  color: var(--text-white);
+}
+
+nav > .ul-theme {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  gap: 0.5em;
+}
+
+/** THEME SWITCHER **/
+
+.theme-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.theme-labels {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.theme-toggle-bg {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  background-color: var(--navy-900);
+  border-radius: 0.75em;
+  padding: 0.15em;
+}
+
+.rd-radio-theme {
+  margin: 0;
+  appearance: none;
+  cursor: pointer;
+}
+
+.rd-radio-theme:checked {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  background-color: var(--red-600);
+}
+
+.lbl-radio-theme {
+  font-size: 0.7em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result {
+  text-align: end;
+  align-content: center;
+  font-size: 1.5em;
+  padding: 0.5em;
+  height: 2.5em;
+  background-color: var(--navy-900);
+  color: white;
+  border-radius: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+/*** KEYPAD ****/
+.keypad {
+  background-color: var(--navy-900);
+  border-radius: 0.2em;
+  padding: 0.75em;
+}
+
+.pav-num {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+  color: var(--navy-900);
+  justify-items: center;
+}
+
+.btn {
+  border: 0px;
+  border-radius: 0.3em;
+  height: 2.5em;
+}
+
+.pav-num .btn {
+  width: 4em;
+}
+
+.pav-num .btn-number {
+  background-color: var(--gray-200);
+  box-shadow: 0em 0.2em 0.1em var(--gray-orange-400);
+}
+
+.btn-control-result {
+  background-color: var(--navy-700);
+  box-shadow: 0em 0.2em 0.1em var(--navy-800);
+  color: var(--text-white);
+}
+
+.div-control-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1em;
+  gap: 1em;
+}
+
+.btn-equal {
+  background-color: var(--red-600);
+  box-shadow: 0em 0.2em 0.1em var(--red-800);
+}
+
+/**** END HEADER *****/

@@ -1,26 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body data-theme="1">
+    <div class="container">
+      <header>
+        <nav>
+          <h3>calc</h3>
+          <ul class="ul-theme">
+            <li class="theme">THEME</li>
+            <li>
+              <div class="theme-switcher">
+                <div class="theme-labels">
+                  <label for="rd-radio-1" class="lbl-radio-theme">1</label>
+                  <label for="rd-radio-2" class="lbl-radio-theme">2</label>
+                  <label for="rd-radio-3" class="lbl-radio-theme">3</label>
+                </div>
+                <div class="theme-toggle-bg">
+                  <input
+                    type="radio"
+                    name="rd-radio"
+                    id="rd-radio-1"
+                    class="rd-radio-theme"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rd-radio"
+                    id="rd-radio-2"
+                    class="rd-radio-theme"
+                  />
+                  <input
+                    type="radio"
+                    name="rd-radio"
+                    id="rd-radio-3"
+                    class="rd-radio-theme"
+                  />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <div class="result">399,981</div>
+        <div class="keypad">
+          <div class="pav-num">
+            <button class="btn btn-number">7</button>
+            <button class="btn btn-number">8</button>
+            <button class="btn btn-number">9</button>
+            <button class="btn btn-control-result">DEL</button>
+            <button class="btn btn-number">4</button>
+            <button class="btn btn-number">5</button>
+            <button class="btn btn-number">6</button>
+            <button class="btn btn-number">+</button>
+            <button class="btn btn-number">1</button>
+            <button class="btn btn-number">2</button>
+            <button class="btn btn-number">3</button>
+            <button class="btn btn-number">-</button>
+            <button class="btn btn-number">.</button>
+            <button class="btn btn-number">0</button>
+            <button class="btn btn-number">/</button>
+            <button class="btn btn-number">x</button>
+          </div>
+          <div class="div-control-result">
+            <button class="btn btn-control-result btn-reset">RESET</button>
+            <button class="btn btn-equal">=</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>

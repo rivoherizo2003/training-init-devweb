@@ -1,0 +1,55 @@
+/* Reglage globale:  1rem = 24px */
+html{
+    font-size: 100%; /* Bonne  pratique : respecte le réglage utilisateur*/
+}
+
+body{
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+/** exemple px fixe */
+.box-px{
+    font-size: 20px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Exemple rem */
+.container-rem{
+    font-size: 1.5rem;
+}
+
+.child-rem{
+    font-size: 1.5rem;
+    background-color: #e0f7fa;
+    padding: 1rem;
+}
+
+/* exemple em (cumulatif / dangereux pour le texte */
+.container-em{
+    font-size: 1.5em; /* 1.5 * 16px(body) = 24px */
+    border: 1px solid orange;
+    margin-top: 20px;
+}
+
+.child-em{
+    font-size: 1.5em; /* 1.5 * 24px = 36px */
+    background-color: #ffe0b2;
+    padding: 1em;
+}
+
+/** exemple % layout */
+.parent-width{
+    width: 100%;
+    background-color: #ddd;
+    height: 100px;
+}
+
+.child-percent{
+    width: 50%;
+    background-color: #ff5252;
+    height: 50%;
+    color: white;
+}
