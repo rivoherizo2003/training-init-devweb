@@ -100,7 +100,6 @@ nav > .ul-theme {
 .theme-toggle-bg {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
   background-color: var(--bg-theme-toggle);
   border-radius: 0.75em;
   padding: 0.15em;
@@ -123,7 +122,7 @@ nav > .ul-theme {
 .lbl-radio-theme {
   font-size: 0.7em;
   font-weight: bold;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 .result {
