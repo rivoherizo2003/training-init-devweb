@@ -42,4 +42,16 @@ nav ul li a:hover {
 main {
     padding: 2rem;
     text-align: center;
+    height: 1700px; /* Juste pour démontrer le défilement */
+}
+
+.sticky {
+    position: -webkit-sticky; /* Pour Safari */
+    position: sticky;
+    top: 0;
+    background-color: #ffeb3b;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #000;
+    margin-bottom: 20px;
 }
