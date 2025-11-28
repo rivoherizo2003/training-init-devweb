@@ -1,0 +1,183 @@
+@import "fonts.css";
+:root {
+  --weight-bold: 700;
+  --weight-semibold: 600;
+  --weight-regular: 400;
+  --weight-medium: 500;
+}
+body,
+html {
+  background-color: #f0f1f3;
+  height: 100vh;
+  /* Une zone d'affichage (aussi appelée viewport en anglais) représente la zone actuellement visible sur l'appareil */
+  margin: 0;
+  padding: 0;
+  font-family: "inter", sans-serif;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.img-profile {
+  width: 40px;
+}
+
+/* ============================================
+   DISPLAY SCALE - For large headings and hero text
+   ============================================ */
+
+/* Display sm - 30px / 1.875rem | Line height: 38px / 2.375rem */
+.display-sm-regular {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  font-weight: var(--weight-regular);
+}
+
+.display-sm-medium {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  font-weight: var(--weight-medium);
+}
+
+.display-sm-semibold {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  font-weight: var(--weight-semibold);
+}
+
+.display-sm-bold {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  font-weight: var(--weight-bold);
+}
+
+/* Display xs - 24px / 1.5rem | Line height: 32px / 2rem */
+.display-xs-regular {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: var(--weight-regular);
+}
+
+.display-xs-medium {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: var(--weight-medium);
+}
+
+.display-xs-semibold {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: var(--weight-semibold);
+}
+
+.display-xs-bold {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: var(--weight-bold);
+}
+
+/* ============================================
+   TEXT SCALE - For body copy and UI elements
+   ============================================ */
+
+/* Text xl - 20px / 1.25rem | Line height: 30px / 1.875rem */
+.text-xl-regular {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: var(--weight-regular);
+}
+
+.text-xl-medium {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: var(--weight-medium);
+}
+
+.text-xl-semibold {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: var(--weight-semibold);
+}
+
+.text-xl-bold {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: var(--weight-bold);
+}
+
+/* Text lg - 18px / 1.125rem | Line height: 28px / 1.75rem */
+.text-lg-regular {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: var(--weight-regular);
+}
+
+.text-lg-medium {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: var(--weight-medium);
+}
+
+.text-lg-semibold {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: var(--weight-semibold);
+}
+
+.text-lg-bold {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: var(--weight-bold);
+}
+
+/* Text md - 16px / 1rem | Line height: 24px / 1.5rem */
+.text-md-regular {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: var(--weight-regular);
+}
+
+.text-md-medium {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: var(--weight-medium);
+}
+
+.text-md-semibold {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: var(--weight-semibold);
+}
+
+.text-md-bold {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: var(--weight-bold);
+}
+
+/* Text sm - 14px / 0.875rem | Line height: 20px / 1.25rem */
+.text-sm-regular {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: var(--weight-regular);
+}
+
+.text-sm-medium {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: var(--weight-medium);
+}
+
+.text-sm-semibold {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: var(--weight-semibold);
+}
+
+.text-sm-bold {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: var(--weight-bold);
+}

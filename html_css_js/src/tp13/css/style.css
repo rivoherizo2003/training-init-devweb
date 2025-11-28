@@ -1,0 +1,144 @@
+/* --- 1. Reset & Variables (Clean Code) --- */
+:root {
+  --primary-color: #e63946;
+  --text-dark: #1d3557;
+  --text-light: #457b9d;
+  --bg-light: #f1faee;
+  --font-main: "Poppins", sans-serif;
+  --spacing-md: 1.5rem;
+  --border-radius: 12px;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Regular.ttf") format("truetype"),
+    url("./fonts/Poppins-Bold.ttf") format("truetype"),
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* --- 2. Composant Carte (Mobile First) --- */
+.product-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Pour que l'image respecte les bords arrondis */
+  display: flex;
+  flex-direction: column; /* Empilement vertical par défaut (Mobile) */
+  max-width: 400px;
+  width: 100%;
+}
+
+.product-card-image-wrapper {
+  width: 100%;
+  height: 250px;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image remplit la zone sans être déformée */
+}
+
+.product-card-content {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espace entre les éléments internes */
+}
+
+.product-card-category {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.product-card-title {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.product-card-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.product-card-footer {
+  margin-top: auto; /* Pousse le footer vers le bas si la carte s'étire */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-card-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* --- 3. Composant Bouton --- */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit; /** font-family: inherit; signifie "Regarde quel est le style de mon parent direct, et applique-moi exactement la même chose." */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c92a36;
+}
+
+/* --- 4. Responsive (Desktop) --- */
+/* On applique ces règles uniquement si l'écran dépasse 768px */
+
+@media (min-width: 768px) {
+  .product-card {
+    flex-direction: row; /* On passe à l'horizontal */
+    max-width: 800px;
+    align-items: stretch;
+  }
+
+  .product-card-image-wrapper {
+    flex: 1; /* Prend 1 part de l'espace disponible */
+    height: auto; /* La hauteur s'adapte au contenu texte */
+  }
+
+  .product-card-content {
+    flex: 1; /* Prend 1 part de l'espace disponible (50/50 avec l'image) */
+    padding: 2.5rem;
+    justify-content: center;
+  }
+
+  .product-card-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+}
