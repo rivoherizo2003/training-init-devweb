@@ -1,3 +1,27 @@
+* {
+    font-size: 1rem;
+}
 nav{
     font-family: "afta-sans", serif;
+    font-weight: 400;
+}
+
+.lorem{
+    font-family: "afta-sans", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.regular-poppins{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.bold-italic-poppins{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2rem;
 }
