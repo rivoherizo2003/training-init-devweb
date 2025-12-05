@@ -1,10 +1,17 @@
 @import "fonts.css";
+
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --weight-bold: 700;
   --weight-semibold: 600;
   --weight-regular: 400;
   --weight-medium: 500;
+  --bg-white: #ffffff;
 }
+
 body,
 html {
   background-color: #f0f1f3;
@@ -181,3 +188,36 @@ html {
   line-height: 1.25rem;
   font-weight: var(--weight-bold);
 }
+
+/*** CONTAINER INVENTOR ***/
+.container-inventor {
+  display: flex;
+  flex-direction: row;
+}
+
+header {
+  display: flex;
+  background-color: var(--bg-white);
+  margin-left: 0.1em;
+  padding: 1rem;
+}
+
+.content {
+  flex: 1;
+}
+
+/**** SIDEBAR ***/
+.sidebar {
+  width: 17rem;
+  background-color: var(--bg-white);
+  height: 80vh;
+  padding: 1rem;
+  border-bottom-right-radius: 10px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+/********* END SIDEBAR *********/
+
+/** END CONTAINER INVENTOR ***/

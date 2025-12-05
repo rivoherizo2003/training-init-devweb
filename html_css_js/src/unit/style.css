@@ -1,4 +1,4 @@
-/* Reglage globale:  1rem = 24px */
+/* Reglage globale:  1rem = 16px */
 html{
     font-size: 100%; /* Bonne  pratique : respecte le réglage utilisateur*/
 }
