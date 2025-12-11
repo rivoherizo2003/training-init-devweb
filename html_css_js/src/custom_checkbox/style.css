@@ -1,0 +1,63 @@
+input[type="checkbox"] {
+    appearance: none;
+    width: 60px;
+    height: 33px;
+    border: 1px solid rgb(94, 203 , 246);
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(243,241,239);
+}
+
+input[type="checkbox"]::before{
+    content: "";
+    width: 24px;
+    height: 24px;
+    border-radius: 25px;
+    border: 2px solid rgb(47, 175,239);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transform-origin: left;
+    animation: 0.5s linear forwards checkball-reverse;
+}
+
+input[type="checkbox"]:checked::before{
+   border: 2px solid rgb(94,203,246);
+   background-color: rgb(255, 255, 255);
+}
+
+input[type="checkbox"]:checked::before{
+background-color: rgb(94,203,246);
+animation: 0.5s linear forwards checkball;
+}
+
+@keyframes checkball {
+    0%{
+        left: 2px;
+        transform: scaleX(1);
+    }
+    25%{
+        transform: scaleX(1.9);
+        left: 5px;
+    }
+    100%{
+        transform: scaleX(1);
+        left: 28px;
+    }
+}
+
+@keyframes checkball-reverse {
+    0%{
+        left: 28px;
+        transform: scaleX(1);
+    }
+    25%{
+        transform: scaleX(1.9);
+        left: 5px;
+    }
+    100%{
+        transform: scaleX(1);
+        left: 2px;
+    }
+}

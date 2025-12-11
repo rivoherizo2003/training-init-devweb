@@ -211,7 +211,7 @@ header {
   width: 17rem;
   background-color: var(--bg-white);
   height: 80vh;
-  padding: 1rem;
+  padding: 20px;
   border-bottom-right-radius: 10px;
 }
 
