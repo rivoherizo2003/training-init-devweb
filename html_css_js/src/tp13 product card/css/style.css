@@ -111,6 +111,16 @@ body {
   color: white;
 }
 
+.btn-success {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+.btn-danger {
+  background-color: red;
+  color: white;
+}
+
 .btn-primary:hover {
   background-color: #c92a36;
 }
