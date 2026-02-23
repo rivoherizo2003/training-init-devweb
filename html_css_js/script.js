@@ -255,3 +255,91 @@ function displayMulti() {
 
   divMultiElmHtml.innerHTML = reponseMultiHtml;
 }
+
+class Rectangle{
+  constructor(height, width){
+    this.height = height;
+    this.width = width;
+  }
+}
+
+//création objet se fait à partir de l'instanciation d'une classe
+const rect1 = new Rectangle(200, 600);
+console.log("Rect1 hauteur="+rect1.height+ " largeur="+rect1.width);
+
+const rect2 = new Rectangle(20, 8000);
+console.log("Rect2 hauteur="+rect2.height+ " largeur="+rect2.width);
+const objt = {firstname:"rakoto", lastname:"be"};
+
+class ProductPPN{
+  constructor(name, price, expiredDate){
+    this.name = name;
+    this.expiredDate = expiredDate;
+  }
+}
+
+// les données peuvent provenir d'une base de donnée "menaka", 15000, "2028/01/01"
+const product1 = new ProductPPN("menaka", 15000, "2028/01/01");
+const product2 = new ProductPPN("cacapigeon", 15000, "2028/01/01");
+const product3 = new ProductPPN("siramamy", 15000, "2028/01/01");
+const product4 = new ProductPPN("sira", 15000, "2028/01/01");
+const product5 = new ProductPPN("ronono", 15000, "2028/01/01");
+"onmouseover"
+// entité => class
+
+//callback
+function myDisplayer(x){
+  document.getElementById("demo1").innerHTML = x;
+}
+
+function myDisplayer2(z){
+  let result = "Hello "+z;
+  document.getElementById("demo2").innerHTML = result;
+}
+
+function myConsole(z){
+  console.log(z);
+}
+
+function myCalculator(num1, num2, nyCallbakiko){
+  let sum = num1 + num2;
+  //myDisplayer(sum);
+  nyCallbakiko(sum);
+}
+
+myCalculator(20, 30, myDisplayer);
+myCalculator(10,20, myDisplayer2);
+myCalculator(10,1, myConsole);
+
+function isPositive(x){
+  if(x >= 0){
+    return true;
+  }
+
+  return false;
+}
+
+function isNegative(x){
+  if(x < 0){
+    return true;
+  }
+
+  return false;
+}
+
+const myNumbers  = [4,-1,10,-8,86,23];
+
+function suppressionParCallback(numbers, nyCallbackAntsoina){
+  const arr = [];
+  for(const x of numbers){
+    if(nyCallbackAntsoina(x)){
+      arr.push(x);
+    }
+  }
+
+  return arr;
+}
+const posNumbers = suppressionParCallback(myNumbers, isPositive);
+const negNumbers = suppressionParCallback(myNumbers, isNegative);
+document.getElementById("demo3").innerHTML = posNumbers;
+document.getElementById("demo4").innerHTML = negNumbers;
