@@ -40,6 +40,12 @@ $etudiants = [
         'notes' => [12, 13, 11]
     ]
 ];
+// foreach($etudiants as $etudiant)
+// $etudiant = [
+    //     'nom'   => 'Alice Dupont',
+    //     'notes' => [15, 18, 14]
+    // ]
+    // $etudiant['notes'] -> [15,18,14]
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +75,7 @@ $etudiants = [
                 $moyenne = calculerMoyenne($etudiant['notes']);
                 $appreciation = genererAppreciation($moyenne);
             ?>
+            
                 <tr>
                     <td><?= htmlspecialchars($etudiant['nom']) ?></td>
                     <td><?= number_format($moyenne, 2) ?> / 20</td>

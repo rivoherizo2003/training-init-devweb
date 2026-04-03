@@ -10,17 +10,25 @@
 <body>
     <?php
     $adultes = array_filter($utilisateurs, fn($user) => $user['age'] >= 18);
-
+    // $adultes = [
+//     ['nom' => 'Alice', 'age' => 25],
+//     ['nom' => 'Claire', 'age' => 18],
+// ];
     // Note : array_filter préserve les clés d'origine. 
     // Utilisez array_values($adultes) si vous voulez réindexer de 0 à N.
-
+    // sum = sum+note;
+    $panier = [
+        ['produit' => 'Clavier', 'prix' => 50, 'quantite' => 1],
+        ['produit' => 'Souris', 'prix' => 25, 'quantite' => 2],
+        ['produit' => 'Écran', 'prix' => 150, 'quantite' => 1],
+    ];
 
     $totalGlobal = array_reduce($panier, function ($accumulateur, $item) {
         return $accumulateur + ($item['prix'] * $item['quantite']);
     }, 0); // 0 est la valeur initiale de l'accumulateur
-
+    
     echo "Total du panier : $totalGlobal €"; // 250 €
-
+    
     $produits = [
         ['id' => 1, 'ref' => 'A12', 'nom' => 'Smartphone'],
         ['id' => 2, 'ref' => 'B45', 'nom' => 'Tablette'],
