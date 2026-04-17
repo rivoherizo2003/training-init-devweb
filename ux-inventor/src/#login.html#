@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/login.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="container">
+        <div class="grid debug">
+          <div class="row debug">
+            <div class="col-sm debug">
+              <div class="logo-left debug">
+                <img class="img-logo" src="assets/images/logo.png" alt="" />
+                <span class="logo-left-title">INVENTOR</span>
+              </div>
+            </div>
+            <div class="col-sm debug">
+              <div class="login-section">
+                <img src="assets/images/logo.png" alt="" srcset="" />
+                <p>
+                  Log in to your account<br />
+                  <span class="text-muted"
+                    >Welcome back! Please enter your details</span
+                  >
+                </p>
+                <div class="form-login debug">
+                  <form action="" method="post">
+                    <label for="txt-email">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="txt-email"
+                      placeholder="Enter your email"
+                      id=""
+                      value="admin@gmail.co"
+                    />
+
+                    <label for="txt-password">Password</label>
+                    <input type="password" name="password" id="txt-password" />
+                    <input type="checkbox" name="remember-me" id="" /> Remember
+                    me
+                    <a href="#">Forgot password</a>
+                    <button type="submit">Sign in</button>
+                  </form>
+                </div>
+                <a href="#"> Sign in with Google</a>
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
