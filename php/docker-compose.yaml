@@ -1,0 +1,44 @@
+services:
+  mysql:
+    image: mysql:8.0
+    env_file:
+      - ./config/mysql/mysql.env
+    volumes:
+      - data-mysql:/var/lib/mysql:rw
+      - ./config/mysql/init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - 3388:3306
+    networks:
+      - mynetwork
+  phpmyadmin:
+    image: phpmyadmin:5.2
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
+    networks:
+      - mynetwork
+    depends_on:
+      - mysql
+  
+  # Nouveau service Apache + PHP
+  web:
+    build:
+      context: .
+      dockerfile: ./config/apache/Dockerfile
+    ports:
+      - 8000:80
+    volumes:
+      # Liaison de vos dossiers locaux vers le DocumentRoot d'Apache
+      - ./db/inventor:/var/www/html/inventor
+      - ./db/samples:/var/www/html/samples
+    networks:
+      - mynetwork
+    depends_on:
+      - mysql
+
+volumes:
+  data-mysql:
+    driver: local
+networks:
+  mynetwork:
