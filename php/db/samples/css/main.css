@@ -1,0 +1,82 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5; /* Light gray, similar to Twitter's background */
+  margin: 20px;
+  color: #1a202c; /* Darker text for readability */
+}
+
+h1 {
+  color: #1da1f2; /* Twitter blue for headings */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensures rounded corners are visible */
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e1e8ed; /* Light border, Twitter-like */
+}
+
+th {
+  background-color: #eaf5ff; /* Very light blue background for headers */
+  color: #1da1f2; /* Twitter blue text for headers */
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+tr:hover {
+  background-color: #f5f8fa; /* Light hover effect */
+}
+
+tr:last-child td {
+  border-bottom: none; /* No border for the last row */
+}
+
+td a {
+  color: #e0245e; /* Twitter's action color for delete */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+.btn-primary {
+  background-color: #1da1f2; /* Twitter blue for buttons */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Rounded buttons */
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  display: block; /* Make button a block element */
+}
+
+button:hover {
+  background-color: #0d95e8; /* Slightly darker blue on hover */
+}
+
+.menu-button {
+  display: flex;
+  align-content: center;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+}

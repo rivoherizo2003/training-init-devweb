@@ -1,66 +1,72 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title> INIT HTML </title>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-
-<body>
-    <h1> hello world HTML !!!</h1>
-    <p>
-        Vitae lectus, elementum consectetur, tristique
-        <span>Lorem ici</span>
-        in lectus fermentum finibus eu.
-        <img src="public/vite.svg" />
-        Adipiscing pellentesque, quisque eu eget morbi etiam eget, suscipit cras urna in. Morbi cras, platea penatibus
-        vulputate consectetur dignissim, diam sed suspendisse varius fermentum. Amet, dictum, turpis urna cras arcu nibh
-        auctor sit morbi eu vitae. Sed, proin fermentum, amet fermentum in nibh laoreet ultricies donec aliquam diam. In
-        elementum platea, non varius suspendisse, eu nullam consectetur condimentum aenean tempor. Ut ut, et faucibus,
-        phasellus tortor vestibulum velit mi sed ultricies laoreet. Nibh vestibulum platea nam risus hac faucibus, fusce
-        sed finibus consectetur neque. Nunc iaculis non vivamus ac gravida, nullam egestas a libero laoreet tempor.
-        Metus consectetur congue, imperdiet.
-    </p>
-    <hr>
-    <img src="public/profil.jpg" width="50%" />
-    <h1>blalblabla h1</h1>
-    <h2>blalblabla H2</h2>
-    <h3>blalblabla</h3>
-    <a href="page2.html">page 2</a>
-    <a href="src/article/article.html">page article</a>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>MDN Developer mozilla</h1>
+    <nav>
+      <a href="https://www.facebook.com/profile">Facebook</a>
+      <a href="/html">Menu</a>
+      <a href="/html">Menu</a>
+      <a href="/html">Menu</a>
+    </nav>
+    <h1>Hello world</h1>
     <table border="1">
+      <thead>
         <tr>
-            <th>col 1</th>
-            <th>col 2</th>
-            <th>col 3</th>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Com1</td>
+          <td>033 26 566 55</td>
+          <td>Madagascar</td>
         </tr>
         <tr>
-            <td class="bg-green">0001</td>
-            <td>0001</td>
-            <td>0001</td>
+          <td>Com2</td>
+          <td>035 02 585 65</td>
+          <td>Maurice</td>
         </tr>
+      </tbody>
     </table>
     <div>
-        Hello div!!!
-        <p>
-                Posuere, suspendisse, nulla lorem eget vel justo nulla varius maximus.
-            </p>
+      <table>
+        <colgroup>
+          <col span="1" style="background-color: red" />
+          <col span="2" style="background-color: yellow" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rakoto</td>
+            <td>Be</td>
+            <td>45</td>
+          </tr>
+          <tr>
+            <td>Rasoa</td>
+            <td>be</td>
+            <td>23</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- formulaire login -->
-    <form action="page2.html" method="post">
-        <label>Login: </label>
-        <input id="txt-username" type="text" name="username" placeholder="Here your login" />
-        <label>Password: </label>
-        <input type="password" name="password" placeholder="Here your password" />
-        <button type="button"> Test button </button>
-        <button type="submit">Connect</button>
+    <form action="" method="post">
+        login <input type="text" name="login" id="">
+        mot de passe <input type="password" name="password" id="">
+        <button type="submit">Se connecter</button>
     </form>
-
-    <p class="text-footer bg-green">
-        Condimentum nam convallis nam fermentum, non, nulla nisl eleifend pellentesque.
-    </p>
-</body>
-
+  </body>
 </html>
