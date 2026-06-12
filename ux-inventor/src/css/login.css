@@ -1,0 +1,214 @@
+/* ==========================================================================
+   LOGIN PAGE : Import du CSS global puis styles spécifiques à la page login
+   ========================================================================== */
+
+@import "main.css";
+
+/* --------------------------------------------------------------------------
+   LAYOUT : La page est divisée en 2 colonnes (logo à gauche, formulaire à droite)
+   -------------------------------------------------------------------------- */
+
+.login-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION GAUCHE : Zone avec le grand logo centré
+   -------------------------------------------------------------------------- */
+
+.login-brand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+}
+
+.login-brand__logo {
+    width: 200px;
+    margin-bottom: 24px;
+}
+
+.login-brand__name {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1abcfe;
+    letter-spacing: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION DROITE : Zone du formulaire de connexion
+   -------------------------------------------------------------------------- */
+
+.login-form-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* --------------------------------------------------------------------------
+   EN-TÊTE DU FORMULAIRE : Petit logo, titre et sous-titre
+   convention BEM (Block, Element, Modifier), une méthode de nommage CSS très utilisée en industrie. Le principe est simple:                                                                           
+  - Block : le composant autonome → login-brand                                                                    
+  - Element : une partie interne du bloc, séparée par __ → login-brand__logo                                       
+  - Modifier : une variante du bloc ou de l'élément, séparée par -- → btn--primary  
+   -------------------------------------------------------------------------- */
+
+.login-form-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-form-header__logo {
+    width: 25%;
+    margin: 0 auto 16px;
+}
+
+.login-form-header__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+}
+
+.login-form-header__subtitle {
+    font-size: 14px;
+    color: var(--color-text-medium);
+}
+
+/* --------------------------------------------------------------------------
+   CHAMPS DU FORMULAIRE : Labels et inputs (Email, Password)
+   -------------------------------------------------------------------------- */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    margin-bottom: 6px;
+}
+
+.form-group__input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: border-color 1s;
+}
+
+.form-group__input::placeholder {
+    color: var(--color-text-light);
+}
+
+.form-group__input:focus {
+    border-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   LIGNE OPTIONS : Checkbox "Remember" à gauche, "Forgot password" à droite
+   -------------------------------------------------------------------------- */
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.login-options__remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-text-dark);
+}
+
+.login-options__remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary);
+}
+
+.login-options__forgot {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.login-options__forgot:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   BOUTONS : Espacement spécifique au login entre les 2 boutons
+   -------------------------------------------------------------------------- */
+
+.login-form-container .btn {
+    width: 100%;
+}
+
+.btn--primary {
+    margin-bottom: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER DU FORMULAIRE : Lien "Don't have an account? Sign up"
+   -------------------------------------------------------------------------- */
+
+.login-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--color-text-medium);
+}
+
+.login-footer__link {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.login-footer__link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE : Adaptation pour tablettes et mobiles
+   ========================================================================== */
+
+/* Tablettes : on empile les 2 sections verticalement */
+@media screen and (max-width: 768px) {
+    .login-page {
+        flex-direction: column;
+    }
+
+    .login-brand {
+        padding: 40px 20px;
+    }
+
+    .login-brand__logo {
+        width: 120px;
+    }
+
+    .login-brand__name {
+        font-size: 24px;
+    }
+
+    .login-form-section {
+        padding: 24px 20px;
+    }
+}

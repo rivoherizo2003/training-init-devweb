@@ -1,0 +1,18 @@
+{
+    "name": "codemdg/inventor",
+    "description": "Inventory management",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Codemdg\\Inventor\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "codemdg",
+            "email": "rivoherizo2003@gmail.com"
+        }
+    ],
+    "require": {}
+}

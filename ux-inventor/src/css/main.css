@@ -1,0 +1,378 @@
+/* ==========================================================================
+   FONT-FACE : Chargement de la police Inter depuis les fichiers locaux
+   ========================================================================== */
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   VARIABLES CSS : Couleurs et valeurs réutilisables dans tout le projet
+   ========================================================================== */
+
+:root {
+    --color-primary: #1366d9;
+    --color-primary-hover: #1054b5;
+    --color-text-dark: #1a1a1a;
+    --color-text-medium: #667085;
+    --color-text-light: #858d9d;
+    --color-border: #f0f1f3;
+    --color-white: #ffffff;
+    --color-background: #f0f1f3;
+    --font-family: "Inter", sans-serif;
+    --border-radius: 8px;
+}
+
+/* ==========================================================================
+   RESET CSS : Normalisation des styles par défaut du navigateur
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+input {
+    font-family: inherit;
+    outline: none;
+    border: none;
+}
+
+/* ==========================================================================
+   BOUTONS : Composants réutilisables sur toutes les pages
+   ========================================================================== */
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.btn--outline {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border);
+}
+
+.btn--outline:hover {
+    background-color: var(--color-background);
+}
+
+.btn__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px 16px;
+    background-color: var(--color-white);
+    border-right: 0px solid var(--color-border);
+    position: sticky;
+    top: 0;
+}
+
+.sidebar__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.sidebar__logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-medium);
+    transition: background-color 0.2s;
+}
+
+.sidebar__link:hover {
+    background-color: var(--color-background);
+}
+
+.sidebar__link--active {
+    color: var(--color-primary);
+    background-color: #e6f0ff;
+}
+
+.sidebar__link img {
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: var(--color-white);
+    /* border-bottom: 1px solid var(--color-border); */
+    margin-left: 2px;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    flex: 1;
+    max-width: 400px;
+}
+
+.header__search img {
+    width: 18px;
+    height: 18px;
+}
+
+.header__search-input {
+    width: 100%;
+    font-size: 0.875rem;
+    color: var(--color-text-dark);
+    background: transparent;
+}
+
+.header__search-input::placeholder {
+    color: var(--color-text-light);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.header__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+
+.card {
+    background-color: var(--color-white);
+    /* border: 1px solid var(--color-border); */
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.card__title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 16px;
+}
+
+.card__stats {
+    display: flex;
+}
+
+.card__stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    text-align: center;
+}
+
+.card__stat-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.card__stat-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.card__stat-label {
+    font-size: 0.75rem;
+    color: var(--color-text-medium);
+}
+
+/* ==========================================================================
+   TABLE
+   ========================================================================== */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__header {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.table__row td {
+    padding: 12px;
+    font-size: 0.875rem;
+    color: var(--color-text-dark);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge--low {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* ==========================================================================
+   STOCK ITEMS
+   ========================================================================== */
+
+.stock-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.stock-item__image {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.stock-item__info {
+    flex: 1;
+}
+
+.stock-item__info p:first-child {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.stock-item__info p:last-child {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+}

@@ -1,0 +1,166 @@
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
+}
+
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    min-width: 0;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    padding: 20px 24px;
+}
+
+/* Left column cards */
+.card--sales,
+.card--purchase,
+.card--chart-sales,
+.card--table {
+    grid-column: 1;
+}
+
+/* Right column cards */
+.card--inventory,
+.card--product,
+.card--chart-order,
+.card--low-stock {
+    grid-column: 2;
+}
+
+/* Stat items with dividers */
+.card__stats {
+    display: flex;
+    gap: 0;
+}
+
+.card__stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    padding: 8px 12px;
+    position: relative;
+}
+
+/* Divider between stat items */
+.card__stat-item + .card__stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background-color: var(--color-border);
+}
+
+/* Stat icon - color background is baked into SVG */
+.card__stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+}
+
+.card__stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    line-height: 1.2;
+}
+
+.card__stat-label {
+    font-size: 12px;
+    color: var(--color-text-medium);
+}
+
+/* Title row for cards with "See All" */
+.card__title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card__title-row .card__title {
+    margin-bottom: 0;
+}
+
+.card__see-all {
+    font-size: 13px;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+/* Charts */
+canvas {
+    width: 100% !important;
+    max-height: 230px;
+}
+
+/* Sidebar active link icon tint */
+.sidebar__link--active img {
+    filter: invert(30%) sepia(90%) saturate(500%) hue-rotate(195deg);
+}
+
+/* Header search max-width */
+.header__search {
+    max-width: 360px;
+}
+
+/* Notification icon size */
+.header__actions img:not(.header__avatar) {
+    width: 22px;
+    height: 22px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+
+    .card--sales,
+    .card--purchase,
+    .card--chart-sales,
+    .card--table,
+    .card--inventory,
+    .card--product,
+    .card--chart-order,
+    .card--low-stock {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+
+    .card__stats {
+        flex-wrap: wrap;
+    }
+
+    .header {
+        padding: 12px 16px;
+    }
+}
