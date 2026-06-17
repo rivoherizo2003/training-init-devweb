@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Codemdg\\Inventor\\' => array($baseDir . '/app'),
+    'Codemdg\\Core\\' => array($baseDir . '/core'),
 );
