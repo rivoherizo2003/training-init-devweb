@@ -1,2 +1,5 @@
-inventor/vendor/
-inventor/vendor/*
+php/db/inventor/
+php/db/inventor/*
+
+php/db/inventor_/
+php/db/inventor_/*

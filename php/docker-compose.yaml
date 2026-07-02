@@ -10,6 +10,7 @@ services:
       - 3388:3306
     networks:
       - mynetwork
+
   phpmyadmin:
     image: phpmyadmin:5.2
     ports:
@@ -21,8 +22,7 @@ services:
     depends_on:
       - mysql
   
-  # Nouveau service Apache + PHP
-  web:
+  web_inventor:
     build:
       context: .
       dockerfile: ./config/apache/Dockerfile

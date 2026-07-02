@@ -10,6 +10,7 @@ class ComposerStaticInitc3136b504563525695fd4268d94cb03d
         'C' =>
         array (
             'Codemdg\\Inventor\\' => 17,
+            'Codemdg\\Core\\' => 13,
         ),
     );
 
@@ -17,6 +18,10 @@ class ComposerStaticInitc3136b504563525695fd4268d94cb03d
         'Codemdg\\Inventor\\' =>
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Codemdg\\Core\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/core',
         ),
     );
 

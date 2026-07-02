@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Codemdg\\Inventor\\": "app/"
+            "Codemdg\\Inventor\\": "app/",
+            "Codemdg\\Core\\": "core/"
         }
     },
     "authors": [

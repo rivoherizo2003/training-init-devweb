@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "poppins";
+    src: url("Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "yuyu";
+    src: url("YuyuShort-Regular.ttf") format("truetype");
+}
+
+.box{
+    font-family: "poppins";
+    margin: -40px 30px 40px 4rem;
+    border: 1px solid brown;
+    height: 100px;
+    color: red;
+}
+
+.box1{
+    font-family: "yuyu";
+    font-size: 30px;
+    height: 100px;
+    border: 1px solid yellow;
+    padding:13px;
+}
+
+.container{
+    margin-top: 50px;
+    margin-left: 100px;
+    border: 2px solid blue;
+    height: 150px;
+    width: 300px;
+}
