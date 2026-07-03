@@ -5,6 +5,6 @@ use Codemdg\Inventor\Controllers\DashboardController;
 use Codemdg\Inventor\Controllers\InventoryController;
 use Codemdg\Inventor\Controllers\SecurityController;
 
-Route::add( '/', SecurityController::class, 'showLogin');
-Route::add('/dashboard', DashboardController::class, 'showDashboard');
-Route::add('/inventory', InventoryController::class, 'showInventory');
+Route::add(url: '/', className: SecurityController::class, methodName:'showLogin', routeName:'show.login');
+Route::add(url:'/admin/dashboard', className: DashboardController::class, methodName:'showDashboard', routeName:'show.dashboard');
+Route::add(url:'/admin/inventory', className: InventoryController::class, methodName:'showInventory', routeName:'show.inventory');

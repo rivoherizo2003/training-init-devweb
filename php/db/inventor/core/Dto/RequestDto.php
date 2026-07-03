@@ -9,6 +9,7 @@ final class RequestDto{
         public private(set) string $url,
         public private(set) string $className,
         public private(set) string $methodName,
+        public private(set) string $routeName,
         public private(set) string $methodHttp
     )
     {

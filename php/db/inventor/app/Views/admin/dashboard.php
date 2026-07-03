@@ -4,7 +4,7 @@ use Codemdg\Core\Views\BlockBuilder;
 
 BlockBuilder::startBlock("additionnal_css");
 ?>
-<link rel="stylesheet" type="text/css" href="<?= APP_URL ?>/assets/css/dashboard.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
 <?php
 BlockBuilder::endBlock();
 $parentView = "admin/default_admin.php";
@@ -18,22 +18,22 @@ BlockBuilder::startBlock("content_admin");
         <h2 class="card__title">Sales Overview</h2>
         <div class="card__stats">
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-sales.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-sales.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">₹ 832</span>
                 <span class="card__stat-label">Sales</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-revenue.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-revenue.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">₹ 18,300</span>
                 <span class="card__stat-label">Revenue</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-profit.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-profit.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">₹ 868</span>
                 <span class="card__stat-label">Profit</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-cost.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-cost.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">₹ 17,432</span>
                 <span class="card__stat-label">Cost</span>
             </div>
@@ -45,12 +45,12 @@ BlockBuilder::startBlock("content_admin");
         <h2 class="card__title">Inventory Summary</h2>
         <div class="card__stats">
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-quantity.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-quantity.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">868</span>
                 <span class="card__stat-label">Quantity in Hand</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-received.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-received.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">200</span>
                 <span class="card__stat-label">To be received</span>
             </div>
@@ -62,22 +62,22 @@ BlockBuilder::startBlock("content_admin");
         <h2 class="card__title">Purchase Overview</h2>
         <div class="card__stats">
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-purchase.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-purchase.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">82</span>
                 <span class="card__stat-label">Purchase</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-cost.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-cost.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">₹ 13,573</span>
                 <span class="card__stat-label">Cost</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-cancel.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-cancel.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">5</span>
                 <span class="card__stat-label">Cancel</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-return.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-return.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">₹17,432</span>
                 <span class="card__stat-label">Return</span>
             </div>
@@ -89,12 +89,12 @@ BlockBuilder::startBlock("content_admin");
         <h2 class="card__title">Product Summary</h2>
         <div class="card__stats">
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-suppliers.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-suppliers.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">31</span>
                 <span class="card__stat-label">Number of Suppliers</span>
             </div>
             <div class="card__stat-item">
-                <img src="assets/images/icons/icon-categories.svg" alt="" class="card__stat-icon">
+                <img src="/assets/images/icons/icon-categories.svg" alt="" class="card__stat-icon">
                 <span class="card__stat-value">21</span>
                 <span class="card__stat-label">Number of Categories</span>
             </div>
@@ -185,7 +185,7 @@ BlockBuilder::startBlock("content_admin");
 </div>
 
 
-<script src="assets/js/chart.js"></script>
-<script src="assets/js/dashboard.js"></script>
+<script src="/assets/js/chart.js"></script>
+<script src="/assets/js/dashboard.js"></script>
 
 <?php BlockBuilder::endBlock() ?>

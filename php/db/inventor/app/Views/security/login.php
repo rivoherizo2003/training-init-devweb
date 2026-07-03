@@ -4,7 +4,7 @@ use Codemdg\Core\Views\BlockBuilder;
 
 BlockBuilder::startBlock("additionnal_css");
 ?>
-<link rel="stylesheet" type="text/css" href="<?= APP_URL ?>/assets/css/login.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/login.css">
 <?php
 BlockBuilder::endBlock();
 ?>
@@ -15,7 +15,7 @@ BlockBuilder::startBlock("content");
 
     <!-- Section gauche : Logo et nom de l'application -->
     <section class="login-brand">
-        <img src="assets/images/logo.png" alt="Logo Kanban" class="login-brand__logo">
+        <img src="/assets/images/logo.png" alt="Logo Kanban" class="login-brand__logo">
         <span class="login-brand__name">INVENTOR</span>
     </section>
 
@@ -25,7 +25,7 @@ BlockBuilder::startBlock("content");
 
             <!-- En-tête avec petit logo et titres -->
             <div class="login-form-header">
-                <img src="assets/images/logo.png" alt="Logo Kanban" class="login-form-header__logo">
+                <img src="/assets/images/logo.png" alt="Logo Kanban" class="login-form-header__logo">
                 <h1 class="login-form-header__title">Log in to your account</h1>
                 <p class="login-form-header__subtitle">Welcome back! Please enter your details.</p>
             </div>

@@ -1,3 +1,3 @@
 <?php
 
-define('APP_URL', "http://localhost:8000");
+define('APP_URL', "http://inventor.test:8000/");
