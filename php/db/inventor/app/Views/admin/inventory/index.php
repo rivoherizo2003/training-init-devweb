@@ -2,12 +2,12 @@
 
 use Codemdg\Core\Views\BlockBuilder;
 
+BlockBuilder::extends("admin/default_admin.php");
 BlockBuilder::startBlock("additionnal_css");
 ?>
 <link rel="stylesheet" type="text/css" href="<?= APP_URL ?>/assets/css/inventory.css">
 <?php
 BlockBuilder::endBlock();
-$parentView = "admin/default_admin.php";
 BlockBuilder::startBlock("content_admin");
 ?>
 <div class="inventory-content">

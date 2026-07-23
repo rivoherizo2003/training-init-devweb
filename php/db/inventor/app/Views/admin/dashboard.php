@@ -2,12 +2,12 @@
 
 use Codemdg\Core\Views\BlockBuilder;
 
+BlockBuilder::extends("admin/default_admin.php");
 BlockBuilder::startBlock("additionnal_css");
 ?>
 <link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
 <?php
 BlockBuilder::endBlock();
-$parentView = "admin/default_admin.php";
 BlockBuilder::startBlock("content_admin");
 ?>
 

@@ -1,33 +1,40 @@
-@font-face {
-    font-family: "poppins";
-    src: url("Poppins-Regular.ttf") format("truetype");
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
-@font-face {
-    font-family: "yuyu";
-    src: url("YuyuShort-Regular.ttf") format("truetype");
+.one {
+  grid-column: 1 / 3;
+  grid-row: 1;
 }
 
-.box{
-    font-family: "poppins";
-    margin: -40px 30px 40px 4rem;
-    border: 1px solid brown;
-    height: 100px;
-    color: red;
+.two {
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
 }
 
-.box1{
-    font-family: "yuyu";
-    font-size: 30px;
-    height: 100px;
-    border: 1px solid yellow;
-    padding:13px;
+.three {
+  grid-column: 1;
+  grid-row: 2 / 5;
 }
 
-.container{
-    margin-top: 50px;
-    margin-left: 100px;
-    border: 2px solid blue;
-    height: 150px;
-    width: 300px;
+.four {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.five {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.six {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+.border{
+    border: 1px solid red;
 }
