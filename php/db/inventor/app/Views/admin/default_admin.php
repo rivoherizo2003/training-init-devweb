@@ -18,7 +18,7 @@ use Codemdg\Core\Views\BlockBuilder;
 <body>
     <div class="admin-layout">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar">     
             <div class="sidebar__logo">
                 <img src="/assets/images/logo.png" alt="Logo">
                 <span>Inventor</span>
@@ -33,7 +33,7 @@ use Codemdg\Core\Views\BlockBuilder;
             </nav>
             <div class="sidebar__bottom">
                 <a href="#" class="sidebar__link"><img src="/assets/images/Settings.svg" alt="">Settings</a>
-                <a href="#" class="sidebar__link"><img src="/assets/images/Log Out.svg" alt="">Log Out</a>
+                <a href="<?= Route::generateUrl("logout") ?>" class="sidebar__link"><img src="/assets/images/Log Out.svg" alt="">Log Out</a>
             </div>
         </aside>
 

@@ -1,5 +1,6 @@
 <?php
 
+use Codemdg\Core\Http\Route;
 use Codemdg\Core\Views\BlockBuilder;
 
 BlockBuilder::startBlock("additionnal_css");
@@ -28,10 +29,11 @@ BlockBuilder::startBlock("content");
                 <img src="/assets/images/logo.png" alt="Logo Kanban" class="login-form-header__logo">
                 <h1 class="login-form-header__title">Log in to your account</h1>
                 <p class="login-form-header__subtitle">Welcome back! Please enter your details.</p>
+                <p class="text-light-red"><?= isset($message) ? $message : "" ?></p>
             </div>
 
             <!-- Formulaire -->
-            <form action="#" method="post">
+            <form action="<?= Route::generateUrl("show.login")  ?>" method="post">
 
                 <!-- Champ Email -->
                 <div class="form-group">
@@ -42,7 +44,9 @@ BlockBuilder::startBlock("content");
                         name="email"
                         class="form-group__input"
                         placeholder="Enter your email"
+                        value="<?= $email ?? "admin@gmail.com" ?>"
                         required>
+                    <span class="text-light-red"><?= $formErrors['emailError'] ?? "" ?></span>
                 </div>
 
                 <!-- Champ Password -->
@@ -54,7 +58,9 @@ BlockBuilder::startBlock("content");
                         name="password"
                         class="form-group__input"
                         placeholder="••••••••"
+                        value="admin123"
                         required>
+                    <span class="text-light-red"><?= $formErrors['passwordError'] ?? "" ?></span>
                 </div>
 
                 <!-- Options : Remember me + Forgot password -->

@@ -15,30 +15,40 @@ BlockBuilder::startBlock("content_admin");
         <h2 class="card__title">Overall inventory</h2>
         <div class="card__stats">
             <div class="card__stat-item">
-                <h2 class="card__stat-subtitle">Categories</h2>
-                14<br>
-                Last 7 days
+                <div class="card__stat-item-wrapper">
+                    <h4 class="card__stat-subtitle">Categories</h4>
+                    <div class="card__stat-score">
+                        14
+                    </div>
+                    <span class="text-muted">Last 7 days</span>
+                </div>
             </div>
             <div class="card__stat-item">
-                Total products<br>
-                14<br>
-                Last 7 days
+                <div class="card__stat-item-wrapper">
+                    <h4>Total products<h4>
+                            14<br>
+                            Last 7 days
+                </div>
             </div>
             <div class="card__stat-item">
-                Total selling<br>
-                14<br>
-                Last 7 days
+                <div class="card__stat-item-wrapper">
+                    <h4 class="card__stat-subtitle">Total selling</h4>
+                    14<br>
+                    Last 7 days
+                </div>
             </div>
             <div class="card__stat-item">
-                Low stock<br>
-                14<br>
-                Last 7 days
+                <div class="card__stat-item-wrapper">
+                    <h4>Low stock</h4>
+                    14<br>
+                    Last 7 days
+                </div>
             </div>
         </div>
     </div>
 
     <div class="card card--products">
-         <h2 class="card__title">Products</h2>
+        <h2 class="card__title">Products</h2>
     </div>
 </div>
 

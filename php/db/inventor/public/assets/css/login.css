@@ -82,7 +82,7 @@
 
 .login-form-header__subtitle {
     font-size: 14px;
-    color: var(--color-text-medium);
+    color: var(--color-gray-medium);
 }
 
 /* --------------------------------------------------------------------------
@@ -112,7 +112,7 @@
 }
 
 .form-group__input::placeholder {
-    color: var(--color-text-light);
+    color: var(--color-gray-light);
 }
 
 .form-group__input:focus {
@@ -174,7 +174,7 @@
     text-align: center;
     margin-top: 24px;
     font-size: 14px;
-    color: var(--color-text-medium);
+    color: var(--color-gray-medium);
 }
 
 .login-footer__link {
