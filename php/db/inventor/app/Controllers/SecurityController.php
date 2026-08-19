@@ -22,7 +22,7 @@ class SecurityController extends AbstractController
     {
         $loginValidator = new LoginValidator();
         if (!empty($_POST)) {
-            if ($loginValidator->validate($_POST)) {
+            if ($loginValidator->isValid($_POST)) {
                 try {
                     $accountDto = $this->securityModel->authenticate($_POST['email'], $_POST['password']);
                     $_SESSION["username"] = $accountDto->getUsername();

@@ -5,12 +5,14 @@ const THEME_2 = "2";
 const THEME_3 = "3";
 
 const setTheme = (theme) => {
+    console.log(theme);
     htmlElement.setAttribute(THEME_ATTR, theme);
     localStorage.setItem(THEME_ATTR, theme);
 };
 
 const initTheme = () => {
-    const savedTheme = localStorage.getItem(THEME_ATTR);
+    const savedTheme = localStorage.getItem(THEME_ATTR) ?? 1;
+    document.getElementById(`rd-radio-${savedTheme}`).setAttribute("checked", true);
     if (savedTheme) {
         setTheme(savedTheme);
         return;
@@ -25,8 +27,22 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.forEach((theme) => {
         theme.addEventListener("change", () => {
             const themeValue = theme.value;
+            console.log("theme value " +theme.value)
             setTheme(themeValue);
         });
     });
 });
+
+const btnOperators = document.querySelectorAll(".btn-operator")
+const resultDiv = document.getElementById("div-result");
+btnOperators.forEach((obj) => {
+    obj.addEventListener("click", () => {
+        if(parseInt(resultDiv.innerHTML) === 0){
+            resultDiv.innerHTML = obj.innerHTML;
+            return;
+        }
+
+        resultDiv.innerHTML = resultDiv.innerHTML + obj.innerHTML;
+    });
+})
 

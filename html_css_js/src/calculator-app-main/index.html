@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="1" data-connected="1">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles_themes.css" />
     <title>Frontend Mentor | Calculator app</title>
   </head>
   <body>
@@ -38,18 +38,21 @@
                     name="rd-radio"
                     id="rd-radio-1"
                     class="rd-radio-theme"
+                    value="1"
                     checked
                   />
                   <input
                     type="radio"
                     name="rd-radio"
                     id="rd-radio-2"
+                    value="2"
                     class="rd-radio-theme"
                   />
                   <input
                     type="radio"
                     name="rd-radio"
                     id="rd-radio-3"
+                    value="3"
                     class="rd-radio-theme"
                   />
                 </div>
@@ -59,25 +62,25 @@
         </nav>
       </header>
       <section>
-        <div class="result">399,981</div>
+        <div class="result" id="div-result">0</div>
         <div class="keypad">
           <div class="pav-num">
-            <button class="btn btn-number">7</button>
-            <button class="btn btn-number">8</button>
-            <button class="btn btn-number">9</button>
+            <button class="btn btn-number btn-operator">7</button>
+            <button class="btn btn-number btn-operator">8</button>
+            <button class="btn btn-number btn-operator">9</button>
             <button class="btn btn-control-result">DEL</button>
-            <button class="btn btn-number">4</button>
-            <button class="btn btn-number">5</button>
-            <button class="btn btn-number">6</button>
-            <button class="btn btn-number">+</button>
-            <button class="btn btn-number">1</button>
-            <button class="btn btn-number">2</button>
-            <button class="btn btn-number">3</button>
-            <button class="btn btn-number">-</button>
-            <button class="btn btn-number">.</button>
-            <button class="btn btn-number">0</button>
-            <button class="btn btn-number">/</button>
-            <button class="btn btn-number">x</button>
+            <button class="btn btn-number btn-operator">4</button>
+            <button class="btn btn-number btn-operator">5</button>
+            <button class="btn btn-number btn-operator">6</button>
+            <button class="btn btn-number btn-operator">+</button>
+            <button class="btn btn-number btn-operator">1</button>
+            <button class="btn btn-number btn-operator">2</button>
+            <button class="btn btn-number btn-operator">3</button>
+            <button class="btn btn-number btn-operator">-</button>
+            <button class="btn btn-number btn-operator">.</button>
+            <button class="btn btn-number btn-operator">0</button>
+            <button class="btn btn-number btn-operator">/</button>
+            <button class="btn btn-number btn-operator">x</button>
           </div>
           <div class="div-control-result">
             <button class="btn btn-control-result btn-reset">RESET</button>
@@ -86,5 +89,6 @@
         </div>
       </section>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>

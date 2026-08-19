@@ -4,6 +4,7 @@
   font-weight: 700;
 }
 
+/** https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Values/color_value/hsl */
 :root {
   --navy-850: hsl(222, 26%, 31%);
   --red-600: hsl(6, 63%, 50%);
