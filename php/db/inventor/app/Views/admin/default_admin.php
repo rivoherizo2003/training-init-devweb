@@ -24,8 +24,8 @@ use Codemdg\Core\Views\BlockBuilder;
                 <span>Inventor</span>
             </div>
             <nav class="sidebar__nav">
-                <a href="<?=  Route::generateUrl('show.dashboard') ?>" class="sidebar__link sidebar__link--active"><img src="/assets/images/Home.svg" alt="">Dashboard</a>
-                <a href="<?=  Route::generateUrl('show.inventory') ?>" class="sidebar__link"><img src="/assets/images/Inventory.svg" alt="">Inventory</a>
+                <a href="<?=  Route::generateUrl('show.dashboard') ?>" class="sidebar__link <?= BlockBuilder::renderBlock("active_menu_dashboard") ?>"><img src="/assets/images/Home.svg" alt="">Dashboard</a>
+                <a href="<?=  Route::generateUrl('show.inventory') ?>" class="sidebar__link <?= BlockBuilder::renderBlock("active_menu_inventory") ?>"><img src="/assets/images/Inventory.svg" alt="">Inventory</a>
                 <a href="#" class="sidebar__link"><img src="/assets/images/Report.svg" alt="">Reports</a>
                 <a href="#" class="sidebar__link"><img src="/assets/images/Suppliers.svg" alt="">Suppliers</a>
                 <a href="#" class="sidebar__link"><img src="/assets/images/Order.svg" alt="">Orders</a>
@@ -54,6 +54,7 @@ use Codemdg\Core\Views\BlockBuilder;
 
         </div>
     </div>
+    <?= BlockBuilder::renderBlock("additionnal_js", "") ?>
 </body>
 
 </html>

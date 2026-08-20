@@ -3,6 +3,9 @@
 use Codemdg\Core\Views\BlockBuilder;
 
 BlockBuilder::extends("admin/default_admin.php");
+BlockBuilder::startBlock("active_menu_dashboard");
+echo "sidebar__link--active";
+BlockBuilder::endBlock();
 BlockBuilder::startBlock("additionnal_css");
 ?>
 <link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">

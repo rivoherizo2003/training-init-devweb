@@ -47,10 +47,11 @@
     --color-white: #ffffff;
     --color-background: #f0f1f3;
     --color-purple:#835ebc;
+    --color-success: #10a760;
     
 
     --font-family: "Inter", sans-serif;
-    --border-radius: 8px;
+    --border-radius: 4px;
 }
 
 /* ==========================================================================
@@ -102,12 +103,21 @@ input {
 COLOR
 ===============
 */
+
+.text-success{
+    color: var(--color-success);
+}
+
 .text-primary{
     color:var(--color-primary);
 }
 
 .text-warning{
     color:var(--color-warning);
+}
+
+.text-purple{
+    color: var(--color-purple);
 }
 
 .text-light-red{
@@ -152,7 +162,7 @@ COLOR
 .btn--outline {
     background-color: var(--color-white);
     color: var(--color-text-dark);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-gray-dark);
 }
 
 .btn--outline:hover {
@@ -387,10 +397,6 @@ COLOR
     font-weight: 500;
 }
 
-.card__stat-item-wrapper > .card__stat-subtitle{
-    
-}
-
 /* ==========================================================================
    TABLE
    ========================================================================== */
@@ -500,6 +506,10 @@ canvas {
 .header__actions img:not(.header__avatar) {
     width: 22px;
     height: 22px;
+}
+
+.d-none{
+    display: none;
 }
 
 
