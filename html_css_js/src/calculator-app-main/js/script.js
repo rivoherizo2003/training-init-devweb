@@ -25,6 +25,7 @@ initTheme();
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.querySelectorAll(".rd-radio-theme");
     themeToggle.forEach((theme) => {
+        console.log(theme);
         theme.addEventListener("change", () => {
             const themeValue = theme.value;
             console.log("theme value " +theme.value)

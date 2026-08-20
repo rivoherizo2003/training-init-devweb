@@ -66,6 +66,11 @@
   --bg-rd-radio-theme: var(--orange-300);
 }
 
+[data-theme="3"]{
+  --bg-body: red;
+  --bg-keypad: yellow;
+}
+
 body {
   padding-top: 1.5rem;
   background-color: var(--bg-body);
