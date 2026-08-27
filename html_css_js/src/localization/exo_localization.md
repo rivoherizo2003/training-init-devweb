@@ -129,13 +129,6 @@ Commune sélectionnée : Ambato
 
 Pour afficher le nom d'un fokontany, utiliser la propriété `fokontany` de chaque objet.
 
-Exemple :
-
-```js
-listeFokontany.forEach(function (element) {
-  console.log(element.fokontany);
-});
-```
 
 ### 4. Champ de recherche
 
