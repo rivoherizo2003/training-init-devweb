@@ -161,3 +161,13 @@ tfoot td {
 .btn-secondary:hover {
     background-color: #5a6268;
 }
+
+.container-form-add-product{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.add-product-action{
+    align-content: end;
+}
