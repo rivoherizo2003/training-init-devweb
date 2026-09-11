@@ -37,6 +37,7 @@ console.log(bill);
     let billTableDetailsBody = document.querySelector(
       "#tbl-bill-details tbody",
     );
+    
     bill = {
       data: null,
       productDetails: [],
@@ -60,8 +61,10 @@ function createRowTable(data) {
   let tdProductUnitPrice = document.createElement("td");
   tdProductUnitPrice.textContent = data.product_unit_price;
   tr.appendChild(tdProductUnitPrice);
-
+  
   let tdProductTotal = document.createElement("td");
+  console.log(tdProductTotal);
+
   tdProductTotal.textContent = data.product_quantity * data.product_unit_price;
   tr.appendChild(tdProductTotal);
 

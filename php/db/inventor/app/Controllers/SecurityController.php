@@ -21,25 +21,23 @@ class SecurityController extends AbstractController
     public function showLogin()
     {
         $loginValidator = new LoginValidator();
-        if (!empty($_POST)) {
-            if ($loginValidator->isValid($_POST)) {
-                try {
-                    $accountDto = $this->securityModel->authenticate($_POST['email'], $_POST['password']);
-                    $_SESSION["username"] = $accountDto->getUsername();
-                    // OK authentication
-                    // 1. destroy old id and regenerate
-                    session_regenerate_id(true);
+        if (!empty($_POST) && $loginValidator->isValid($_POST)) {
+            try {
+                $accountDto = $this->securityModel->authenticate($_POST['email'], $_POST['password']);
+                $_SESSION["username"] = $accountDto->getUsername();
+                // OK authentication
+                // 1. destroy old id and regenerate
+                session_regenerate_id(true);
 
-                    // 2. On assigne les données
-                    $_SESSION['account_id'] = $accountDto->getId();
-                    session_write_close();
-                    $this->redirectToUrl(Route::generateUrl("show.dashboard"));
-                } catch (\Throwable $th) {
-                    $this->render("security/login.php", ['message' => $th->getMessage(), "email" => $_POST['email']]);
-                }
-            } else {
-                $this->render("security/login.php", ['formErrors' => $loginValidator->getErrors()]);
+                // 2. On assigne les données
+                $_SESSION['account_id'] = $accountDto->getId();
+                session_write_close();
+                $this->redirectToUrl(Route::generateUrl("show.dashboard"));
+            } catch (\Throwable $th) {
+                $this->render("security/login.php", ['message' => $th->getMessage(), "email" => $_POST['email']]);
             }
+        } else {
+            $this->render("security/login.php", ['formErrors' => $loginValidator->getErrors()]);
         }
 
         $this->render("security/login.php");

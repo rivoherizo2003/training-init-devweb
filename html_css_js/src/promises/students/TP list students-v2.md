@@ -4,6 +4,8 @@
 
 Mettre en pratique la manipulation du DOM, la gestion des événements, le filtrage de données en JavaScript et l'implémentation d'une pagination pour gérer un grand volume de données de manière performante.
 
+<h1>On veut une belle interface svp!!!!!</h1>
+
 ## Matériel fourni
 
 * Un fichier de données nommé `etudiants-v2.json` contenant 250 000 objets structurés ainsi : `{ "nom": "Alice", "age": 22, "filiere": "Informatique" }`[cite: 2].
@@ -17,7 +19,7 @@ Avant de coder la logique, vous devez construire la structure de la page. Créez
 * **Les filtres de recherche :**
   * Un champ de saisie (`input` texte) pour rechercher par nom.
   * Un menu déroulant (`select`) pour filtrer par filière (avec une option par défaut "Toutes les filières").
-* **Le tableau des résultats :** Un tableau (`table`) avec un en-tête statique (Nom, Âge, Filière) et un corps (`tbody`) vide.
+* **Le tableau des résultats :** Un tableau (`table`) avec un en-tête statique (Nom, Âge, Filière) et un corps (`tbody`) qui listera les 10 premiers.
 * **Les contrôles de pagination :** Sous le tableau, ajoutez une section contenant :
   * Un bouton "Précédent".
   * Un indicateur de page courante (ex: "Page 1 sur 25").
@@ -27,7 +29,7 @@ Avant de coder la logique, vous devez construire la structure de la page. Créez
 ## Partie 2 : Chargement des données et Pagination (JavaScript)
 
 * **Récupération des données :** Écrivez un script permettant de charger le fichier `etudiants-v2.json` (par exemple stocké dans une variable `allStudents`)[cite: 2].
-* **Variables d'état :** Créez des variables pour stocker : la page courante (ex: `currentPage` initialisée à 1) et le nombre d'éléments par page (ex: `itemsPerPage` initialisé à 20).
+* **localStorage :** Stocker dans localStorage le `currentPage` (initialisée à 1) et le nombre d'éléments par page `itemsPerPage` (initialisé à 20).
 * **Fonction d'affichage paginée :** Créez une fonction (ex: `renderTable()`) qui ne prend qu'une "tranche" (`slice`) du tableau global d'étudiants en fonction de la `currentPage` et du `itemsPerPage`. Cette fonction doit :
   1. Vider le `tbody`.
   2. Générer les lignes HTML uniquement pour les étudiants de la page en cours.
@@ -40,17 +42,16 @@ Avant de coder la logique, vous devez construire la structure de la page. Créez
 
 ## Partie 4 : Génération dynamique des filières
 
-* **Extraction sans doublon :** Parcourez l'ensemble des étudiants (`allStudents`). Extrayez toutes les filières existantes en veillant à ignorer les doublons (indice : utilisez un `Set` et stockez le résultat dans une variable `uniqueMajors`).
-* **Alimentation du menu déroulant :** Générez dynamiquement les options de votre `select` de filières à partir de ce Set.
+* **Extraction sans doublon :** Parcourez l'ensemble des étudiants (`allStudents`). Extraire toutes les filières existantes en veillant à ignorer les doublons.
+* **Alimentation du menu déroulant :** Générez dynamiquement les options de votre `select` de filières à partir de ces données.
 
 ## Partie 5 : Implémentation du Filtrage Croisé (Nom et Filière)
 
 * **Logique de filtrage global :** Créez une fonction `filterStudents()` qui sera appelée à chaque fois que le champ texte OU le `select` de filière est modifié.
 * **Le filtre doit :**
-  1. Récupérer la valeur du champ texte (ex: `searchQuery`) et celle du menu déroulant (ex: `selectedMajor`).
-  2. Créer un nouveau tableau (ex: `filteredStudents`) contenant uniquement les étudiants qui correspondent aux *deux* critères en même temps (le nom contient la recherche ET la filière correspond).
+  1. Récupérer la valeur du champ texte (ex: `search-query`) et celle du menu déroulant (ex: `select-major`).
+  2. La table ne doit contenir que les étudiants qui correspondent aux *deux* critères en même temps (le nom contient la recherche ET la filière correspond).
   3. **Réinitialiser `currentPage` à 1** (car le nombre total de résultats vient de changer).
-  4. Passer ce tableau `filteredStudents` à votre fonction `renderTable()`.
 
 ---
 

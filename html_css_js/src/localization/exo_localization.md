@@ -11,9 +11,11 @@ L'exercice permet de pratiquer :
 - l'affichage dynamique dans le DOM
 - la gestion des événements avec `addEventListener`
 
+<h1>On veut une belle interface svp!!!!!</h1>
+
 ## Fichiers à utiliser
 
-Dans le dossier `html_css_js/src/localization`, vous devez utiliser :
+Vous devez utiliser :
 
 - `fokontany.json` : fichier contenant les données de localisation
 - `index.html` : page HTML à créer
@@ -54,19 +56,14 @@ Créer une page `index.html` qui contient :
 
 1. Un titre principal.
 2. Un `select` permettant de sélectionner une région.
-3. Un bouton pour afficher la liste des districts de la région sélectionnée.
-4. Un `select` permettant de sélectionner un district.
-5. Un bouton pour afficher la liste des communes du district sélectionné.
-6. Un `select` permettant de sélectionner une commune.
-7. Un bouton pour afficher la liste des fokontany de la commune sélectionnée.
-8. Une zone d'affichage dans laquelle les résultats apparaissent.
-9. Du CSS pour rendre l'affichage plus lisible.
-10. Un message d'erreur si le fichier JSON ne peut pas être chargé.
-11. Un message indiquant que les données sont en cours de chargement.
-12. Un champ de recherche pour filtrer les régions, districts, communes ou fokontany.
-13. Personnalisez chaque input, select avec du CSS.
-
-Les trois listes à puces doivent s'afficher uniquement lorsqu'on clique sur le bouton correspondant.
+3. Un `select` permettant de sélectionner un district.
+4. Un `select` permettant de sélectionner une commune.
+5. Une `table` pour afficher la liste des fokontany de la commune sélectionnée.
+6. Du CSS pour rendre l'affichage plus lisible.
+7. Un message d'erreur si le fichier JSON ne peut pas être chargé.
+8. Un message indiquant que les données sont en cours de chargement.
+9. Un champ de recherche par nom de fokontany.
+10. Personnalisez chaque input, select avec du CSS.
 
 ## Fonctionnement attendu
 
@@ -76,96 +73,56 @@ Au chargement des données, remplir automatiquement le premier `select` avec la 
 
 L'utilisateur doit pouvoir :
 
-1. choisir une région dans le `select`
-2. cliquer sur le bouton "Afficher les districts"
-3. voir uniquement les districts de la région sélectionnée
-
-Exemple :
-
-```text
-Région sélectionnée : ANALAMANGA
-- Ambohidratrimo
-- Andramasina
-- Anjozorobe
-```
+1. choisir une région dans le `select`;
+2. Charger la liste des districts de ce région dans le select liste des districts par région;
 
 ### 2. Sélection d'un district et affichage des communes
 
-Le `select` des districts doit être rempli avec les districts disponibles.
+Le `select` des districts doit être rempli avec les districts disponibles par région.
 
 L'utilisateur doit pouvoir :
 
-1. choisir un district dans le `select`
-2. cliquer sur le bouton "Afficher les communes"
-3. voir uniquement les communes du district sélectionné
-
-Exemple :
-
-```text
-District sélectionné : Ambohidratrimo
-- Ambato
-- Ambatolampy
-- Ambohidratrimo
-```
+1. Choisir un district dans le `select`;
+2. Voir uniquement les communes du district sélectionné dans le select liste des communes;
 
 ### 3. Sélection d'une commune et affichage des fokontany
 
-Le `select` des communes doit être rempli avec les communes disponibles.
+Le `select` des communes doit être rempli avec les communes disponibles par région ET district.
 
 L'utilisateur doit pouvoir :
 
 1. choisir une commune dans le `select`
-2. cliquer sur le bouton "Afficher les fokontany"
-3. voir uniquement les fokontany de la commune sélectionnée
+2. Voir tous les fokontany de la commune sélectionnée dans la table;
 
-Exemple :
-
-```text
-Commune sélectionnée : Ambato
-- Ambanimaso
-- Ambato
-- Ambatoharanana
-```
-
-Pour afficher le nom d'un fokontany, utiliser la propriété `fokontany` de chaque objet.
-
+N.B: Attention PAS DE DOUBLONS dans les select district, communes
 
 ### 4. Champ de recherche
 
-Ajouter un champ de recherche permettant de filtrer les résultats affichés.
+- Un select pour lister toutes les régions;
+- Un select pour lister les districts pour une région;
+- un select pour lister les communes dans une district;
+- Un zone de texte permettant de rechercher a partir du nom d'un fokontany;
 
-Le champ de recherche doit pouvoir filtrer :
+Par exemple, si la liste des fokontany est affichée et que l'utilisateur tape `Ambato`, la table doit montrer uniquement les fokontany qui portent ce nom dans la table avec leurs région, district, commune dans les colonnes respectifs.
 
-- les régions
-- les districts
-- les communes
-- les fokontany
+![interface](interface_localization.jpg)
 
-Par exemple, si la liste des fokontany est affichée et que l'utilisateur tape `Ambato`, la zone d'affichage doit montrer uniquement les fokontany qui contiennent ce texte.
+C'est juste une image pour représenter l'interface chacun est libre de créer une interface plus stylées.
 
 ## Contraintes techniques
 
 - Utiliser obligatoirement `fetch` pour récupérer les données.
 - Ne pas écrire les données directement dans le fichier HTML.
 - Utiliser JavaScript pour créer ou modifier le contenu affiché dans la page.
-- Utiliser un événement `click` pour chaque bouton.
 - Utiliser un événement `change` sur les `select` si vous voulez mettre à jour les choix disponibles.
-- Effacer l'ancien affichage avant d'afficher une nouvelle liste.
+- Effacer l'ancien affichage avant d'afficher une nouvelle liste pour les select et pour la table.
 - Le fichier principal de la page doit s'appeler `index.html`.
 - Utiliser `Object.keys()` pour récupérer les régions, les districts et les communes.
 - Utiliser la propriété `fokontany` pour récupérer le nom de chaque fokontany.
+- Créer les éléments HTML avec `createElement`.
 
 ## Critères de validation
 
-L'exercice est réussi si :
+Suivez à la lettre les instructions.
 
-- la page `index.html` charge bien le fichier `fokontany.json`
-- un message de chargement s'affiche pendant la récupération des données
-- un message d'erreur s'affiche si le fichier JSON ne peut pas être chargé
-- les régions sont disponibles dans un `select`
-- les districts sont affichés après sélection d'une région et clic sur le bouton
-- les communes sont affichées après sélection d'un district et clic sur le bouton
-- les fokontany sont affichés après sélection d'une commune et clic sur le bouton
-- le champ de recherche filtre les résultats affichés
-- la page contient du CSS pour rendre l'affichage lisible
-- les trois affichages utilisent les données venant du fichier JSON
+Source data: https://github.com/julkwel/madagascar-map

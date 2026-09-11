@@ -21,8 +21,8 @@ abstract class AbstractController
         }
 
         try {
-            require ROOT . "/app/Views/" . $view;
-            require ROOT . "/app/Views/" . BlockBuilder::getParentView();
+            require_once ROOT . "/app/Views/" . $view;
+            require_once ROOT . "/app/Views/" . BlockBuilder::getParentView();
         } catch (\Throwable $th) {
             throw new Exception("View should be in /app/Views/$view. Error:" . $th->getMessage());
         }
@@ -41,5 +41,14 @@ abstract class AbstractController
             //after a redirection always put an exit otherwise the rest of the code will be executed by the server
             exit;
         }
+    }
+
+    public function json(array $data):void
+    {
+        header("Content-Type: application/json; charset=utf-8");
+
+        echo json_encode($data);
+
+        exit();
     }
 }

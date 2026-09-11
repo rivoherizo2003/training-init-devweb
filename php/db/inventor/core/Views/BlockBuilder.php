@@ -40,4 +40,9 @@ class BlockBuilder
     {
         return self::$parentView;
     }
+
+    public static function include(string $viewPath):void
+    {
+        include ROOT . "/app/Views/" .$viewPath;
+    }
 }
