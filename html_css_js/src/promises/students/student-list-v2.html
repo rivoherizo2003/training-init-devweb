@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail des Étudiants</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <div class="panel">
+            <header class="panel-header">
+                <h1>Portail des Étudiants</h1>
+            </header>
+
+            <main class="panel-body">
+                <div class="filters">
+                    <div class="field">
+                        <label for="search-query">Rechercher</label>
+                        <input id="search-query" type="text" placeholder="Recherche par nom..." aria-label="Recherche par nom" />
+                    </div>
+
+                    <div class="field">
+                        <label for="select-major">Filière</label>
+                        <select id="select-major" aria-label="Choisir une filière">
+                            <option value="all">Toutes les filières</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results-head">
+                    <div id="results-count" class="count">Résultats trouvés : 0</div>
+                </div>
+
+                <table aria-label="Tableau des étudiants">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Âge</th>
+                            <th>Filière</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body"></tbody>
+                </table>
+
+                <div class="pagination">
+                    <div class="pagination-controls">
+                        <button id="prev-page" type="button" class="btn-secondary" aria-label="Page précédente">Précédent</button>
+                        <span id="page-indicator" class="page-indicator">Page 0 sur 0</span>
+                        <button id="next-page" type="button" class="btn-primary" aria-label="Page suivante">Suivant</button>
+                    </div>
+
+                    <label class="page-size" for="items-per-page">
+                        <span>Afficher</span>
+                        <select id="items-per-page" aria-label="Nombre d'éléments par page">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>par page</span>
+                    </label>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="student-list-v2.js"></script>
+</body>
+</html>
