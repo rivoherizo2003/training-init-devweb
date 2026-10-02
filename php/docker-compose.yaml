@@ -21,11 +21,14 @@ services:
       - mynetwork
     depends_on:
       - mysql
-  
+
   web_inventor:
     build:
       context: .
       dockerfile: ./config/apache/Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
     ports:
       - 8000:80
     volumes:

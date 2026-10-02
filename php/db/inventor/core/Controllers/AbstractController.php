@@ -43,10 +43,11 @@ abstract class AbstractController
         }
     }
 
-    public function json(array $data):void
+    public function json(array $data, int $statusResponse = 200):void
     {
         header("Content-Type: application/json; charset=utf-8");
-
+        http_response_code($statusResponse);
+        
         echo json_encode($data);
 
         exit();

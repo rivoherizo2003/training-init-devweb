@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+.container-pos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
