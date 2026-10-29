@@ -16,5 +16,6 @@
             <?php include "views/create_bill.php"; ?>
         </div>
     </div>
+  <script type="text/javascript" src="js/pos.js"></script>
 </body>
 </html>

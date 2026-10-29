@@ -1,5 +1,6 @@
 <?php
 
+use Codemdg\Core\Http\Route;
 use Codemdg\Core\Views\BlockBuilder;
 
 BlockBuilder::extends("admin/default_admin.php");
@@ -58,7 +59,7 @@ BlockBuilder::startBlock("content_admin");
             </button>
         </div>
         <div class="card-products__list">
-            <table class="table-list-products">
+            <table class="table-list-products" id="table-products" data-url-list-products="<?= Route::generateUrl("products.list") ?>">
                 <thead>
                     <tr>
                         <th>Products</th>
@@ -71,127 +72,21 @@ BlockBuilder::startBlock("content_admin");
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Produit 1 -->
-                    <tr>
-                        <td>Sucre en poudre</td>
-                        <td>$150</td>
-                        <td>120 Packets</td>
-                        <td>20 Packets</td>
-                        <td>01/10/2027</td>
-                        <td><span class="text-success">In-stock</span></td>
-                        <td></td>
-                    </tr>
 
-                    <!-- Produit 2 -->
-                    <tr>
-                        <td>Sel fin</td>
-                        <td>$45</td>
-                        <td>10 Packets</td>
-                        <td>15 Packets</td>
-                        <td>12/05/2028</td>
-                        <td><span class="text-warning">Low stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 3 -->
-                    <tr>
-                        <td>Concentré de Tomate</td>
-                        <td>$320</td>
-                        <td>0 Packets</td>
-                        <td>10 Packets</td>
-                        <td>15/11/2026</td>
-                        <td><span class="text-danger">Out of stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 4 -->
-                    <tr>
-                        <td>Lait en poudre</td>
-                        <td>$890</td>
-                        <td>65 Packets</td>
-                        <td>20 Packets</td>
-                        <td>04/09/2027</td>
-                        <td><span class="text-success">In-stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 5 -->
-                    <tr>
-                        <td>Café soluble</td>
-                        <td>$1050</td>
-                        <td>5 Packets</td>
-                        <td>10 Packets</td>
-                        <td>20/01/2028</td>
-                        <td><span class="text-warning">Low stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 6 -->
-                    <tr>
-                        <td>Sachets de Thé</td>
-                        <td>$210</td>
-                        <td>80 Packets</td>
-                        <td>15 Packets</td>
-                        <td>30/08/2027</td>
-                        <td><span class="text-success">In-stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 7 -->
-                    <tr>
-                        <td>Biscuits secs</td>
-                        <td>$180</td>
-                        <td>200 Packets</td>
-                        <td>50 Packets</td>
-                        <td>12/12/2026</td>
-                        <td><span class="text-success">In-stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 8 -->
-                    <tr>
-                        <td>Tablettes de Chocolat</td>
-                        <td>$560</td>
-                        <td>0 Packets</td>
-                        <td>20 Packets</td>
-                        <td>05/05/2027</td>
-                        <td><span class="text-danger">Out of stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 9 -->
-                    <tr>
-                        <td>Beurre doux</td>
-                        <td>$430</td>
-                        <td>8 Packets</td>
-                        <td>15 Packets</td>
-                        <td>10/10/2026</td>
-                        <td><span class="text-warning">Low stock</span></td>
-                        <td></td>
-                    </tr>
-
-                    <!-- Produit 10 -->
-                    <tr>
-                        <td>Fromage râpé</td>
-                        <td>$670</td>
-                        <td>42 Packets</td>
-                        <td>10 Packets</td>
-                        <td>25/11/2026</td>
-                        <td><span class="text-success">In-stock</span></td>
-                        <td></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
         <div class="product-list-footer">
-            <button type="button" class="btn btn--outline">Previous</button>
-            <p>Page 1 of 10</p>
-            <button type="button" class="btn btn--outline">Next</button>
+            <button type="button" class="btn btn--outline" id="btn-previous">Previous</button>
+            <p>Page <span id="spn-current-page">1</span> of <span id="spn-total-pages">10</span></p>
+            <button type="button" class="btn btn--outline" id="btn-next">Next</button>
         </div>
     </div>
 </div>
 <?php
-    BlockBuilder::include("admin/inventory/addProductModal.php");
+BlockBuilder::include("admin/inventory/add_product_modal.php");
+BlockBuilder::include("admin/inventory/confirm_delete_product_modal.php");
+BlockBuilder::include("admin/inventory/edit_product_modal.php");
 ?>
 
 <?php BlockBuilder::endBlock() ?>
@@ -200,7 +95,7 @@ BlockBuilder::startBlock("content_admin");
 BlockBuilder::startBlock("additionnal_js");
 ?>
 <script type="module" src="<?= APP_URL ?>/assets/js/inventory.js"></script>
-<script src="<?= APP_URL ?>/assets/js/product.js"></script>
+<script type="module" src="<?= APP_URL ?>/assets/js/product.js"></script>
 <?php
 BlockBuilder::endBlock();
 ?>

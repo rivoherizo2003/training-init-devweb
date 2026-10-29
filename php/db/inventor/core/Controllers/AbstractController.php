@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Codemdg\Core\Controllers;
 
+use Codemdg\Core\Dto\Response\PaginationResponseDto;
 use Codemdg\Core\Views\BlockBuilder;
 use Exception;
 
@@ -43,12 +44,13 @@ abstract class AbstractController
         }
     }
 
-    public function json(array $data, int $statusResponse = 200):void
+    public function json(array|PaginationResponseDto $data, int $statusResponse = 200):void
     {
         header("Content-Type: application/json; charset=utf-8");
+        
         http_response_code($statusResponse);
         
-        echo json_encode($data);
+        echo json_encode($data, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
 
         exit();
     }

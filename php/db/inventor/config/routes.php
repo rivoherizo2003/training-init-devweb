@@ -14,7 +14,10 @@ Route::add(url:'/admin/inventory', className: InventoryController::class, method
 
 //Product
 Route::add(url:"/admin/add-product", className:ProductController::class, methodName:"addProduct", routeName:"product.add", methodHttp:"POST");
-
+Route::add(url:"/admin/products", className:ProductController::class, methodName:"listProducts", routeName:"products.list", methodHttp:"GET");
+Route::add(url:"/admin/delete", className:ProductController::class, methodName:"deleteProduct", routeName:"product.delete", methodHttp:"GET");
+Route::add(url:"/admin/show-edit", className:ProductController::class, methodName:"showEdit", routeName:"product.show.edit", methodHttp:"GET");
+Route::add(url:"/admin/save-product", className:ProductController::class, methodName:"saveProduct", routeName:"product.save", methodHttp:"POST");
 
 
 //Category

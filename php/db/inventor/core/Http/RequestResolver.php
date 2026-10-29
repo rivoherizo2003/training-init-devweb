@@ -14,10 +14,12 @@ class RequestResolver
 
     public function resolve(string $requestUri)
     {
+        $dataUri = explode("?", $requestUri);
+        $url = $dataUri[0] ?? $requestUri;
         $isRouteExists = false;
         /** @var RequestDto $route */
         foreach ($this->routes as $route) {
-            if ($route->url === $requestUri) {
+            if ($route->url === $url) {
                 $isRouteExists = true;
                 $reflectionClassController = new ReflectionClass($route->className);
                 $controllerInstance = $reflectionClassController->newInstance();
