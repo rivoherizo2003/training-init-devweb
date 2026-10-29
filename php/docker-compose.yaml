@@ -33,9 +33,9 @@ services:
       - 8000:80
     volumes:
       # Liaison de vos dossiers locaux vers le DocumentRoot d'Apache
-      - ./db/inventor:/var/www/html/inventor
-      - ./db/inventor_:/var/www/html/inventor_
-      - ./db/samples:/var/www/html/samples
+      - ./tp/inventor:/var/www/html/inventor
+      - ./tp/inventor_:/var/www/html/inventor_
+      - ./tp/samples:/var/www/html/samples
       - ./config/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf:ro
     networks:
       - mynetwork

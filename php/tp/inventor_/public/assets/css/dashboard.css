@@ -1,0 +1,46 @@
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    padding: 20px 24px;
+}
+
+/* Left column cards */
+.card--sales,
+.card--purchase,
+.card--chart-sales,
+.card--table {
+    grid-column: 1;
+}
+
+/* Right column cards */
+.card--inventory,qqwsxddddedsfQsxaz
+.card--product,
+.card--chart-order,
+.card--low-stock {
+    grid-column: 2;
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+
+    .card--sales,
+    .card--purchase,
+    .card--chart-sales,
+    .card--table,
+    .card--inventory,
+    .card--product,
+    .card--chart-order,
+    .card--low-stock {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 12px;
+        gap: 12px;
+    }
+}
