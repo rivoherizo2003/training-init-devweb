@@ -90,6 +90,7 @@ body {
 }
 
 .product-card-price {
+  text-align: end;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
@@ -147,6 +148,7 @@ body {
   }
 
   .product-card-footer{
+    gap: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: end;
