@@ -11,7 +11,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ## 1. Icônes des Tableaux (Actions Rapides)
 
 ### Ajouter un article (Le "+")
+
 **Utilité :** S'affiche dans la colonne "Action" du catalogue pour intégrer un produit au panier.
+
 ```html
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 12h14"></path>
@@ -20,7 +22,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ```
 
 ### Supprimer une ligne (La Croix)
+
 **Utilité :** S'affiche dans la colonne "Action" du panier pour retirer un produit de la sélection.
+
 ```html
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -33,7 +37,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ## 2. Icônes des Boutons Principaux (Call-to-Action)
 
 ### Nouveau Ticket (Corbeille)
+
 **Utilité :** Dans le panneau de règlement, pour réinitialiser la commande et vider le panier.
+
 ```html
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M3 6h18"></path>
@@ -42,7 +48,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ```
 
 ### Encaisser & Imprimer (Imprimante)
+
 **Utilité :** Le gros bouton principal de validation de la commande.
+
 ```html
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <polyline points="6 9 6 2 18 2 18 9"></polyline>
@@ -52,7 +60,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ```
 
 ### Ajouter au panier (Gros bouton "+")
+
 **Utilité :** Le bouton situé sous la barre de recherche rapide (Quick Add).
+
 ```html
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="12" cy="12" r="10"></circle>
@@ -66,7 +76,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ## 3. Icônes d'Interface (Champs et En-tête)
 
 ### Loupe de recherche
+
 **Utilité :** Se place à l'intérieur des champs de texte de filtrage (Catalogue et Panier).
+
 ```html
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="11" cy="11" r="8"></circle>
@@ -75,7 +87,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ```
 
 ### Caddie (En-tête de l'application)
+
 **Utilité :** S'affiche tout en haut à gauche, à côté du grand titre "Point de Vente (POS) / Facturation".
+
 ```html
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="9" cy="21" r="1"></circle>
@@ -89,7 +103,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ## 4. Icônes des Cartes Statistiques (En haut de page)
 
 ### Carton "Total Articles" (Statistique 1)
+
 **Utilité :** L'icône de la première carte indiquant le nombre d'articles enregistrés.
+
 ```html
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -99,7 +115,9 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ```
 
 ### Coche "Montant Brut" (Statistique 2)
+
 **Utilité :** L'icône de la deuxième carte indiquant le montant sous-total de la vente.
+
 ```html
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -108,10 +126,24 @@ Ce document rassemble toutes les icônes au format SVG (Scalable Vector Graphics
 ```
 
 ### Carte Bancaire "Net à Payer" (Statistique 3)
+
 **Utilité :** L'icône de la troisième carte (en orange) indiquant le total TTC.
+
 ```html
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
   <line x1="1" y1="10" x2="23" y2="10"></line>
 </svg>
+```
+
+### Icones emojis
+
+**Utilité :** Copier et coller pour utiliser ces emojis dans notre page html
+
+```html
+<span>📦</span> Catalogue &amp; Articles Disponibles
+<span>🛒</span> Panier &amp; Produits Sélectionnés
+<span>💳</span> Récapitulatif &amp; Règlement
+🏦 Virement
+💵 Espèces
 ```
