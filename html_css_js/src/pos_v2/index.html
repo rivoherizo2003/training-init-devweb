@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Point de Vente (POS) - Système de Caisse &amp; Facturation</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <div class="pos-container" data-purpose="pos-main-wrapper">
+    <!-- Print Only Header -->
+    <div class="print-header" data-purpose="print-receipt-header">
+      <h2 style="font-size: 1.5rem; font-weight: bold;">TICKET DE CAISSE / FACTURE</h2>
+      <p style="font-size: 0.9rem; color: #4b5563;">TechnoStore POS - 12 Boulevard Haussmann, Paris</p>
+      <p id="print-date-time" style="font-size: 0.8rem; color: #6b7280; margin-top: 4px;"></p>
+    </div>
+    <!-- BEGIN: TopHeader -->
+    <header class="header-bar" data-purpose="top-header">
+      <div class="title-h1"><svg fill="none" height="24" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="24">
+          <circle cx="8" cy="21" r="1"></circle>
+          <circle cx="19" cy="21" r="1"></circle>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+        </svg> Point de Vente (POS) / Facturation</div>
+      <div class="header-status">
+        <span class="badge-status">Caisse Ouverte</span>
+        <span>Opérateur: <strong>Alexandre M.</strong></span>
+        <span>Ticket N°: <strong id="ticket-number">#POS-4089</strong></span>
+      </div>
+    </header>
+    <!-- END: TopHeader -->
+    <!-- BEGIN: StatCardsSection -->
+    <section class="stats-grid" data-purpose="metrics-summary">
+      <!-- Card 1: Total Articles -->
+      <div class="card stat-card" data-purpose="stat-card-articles">
+        <div class="stat-meta">
+          <span class="stat-label">Total Articles au Panier</span>
+          <span class="stat-value" id="stat-total-items">4</span>
+          <span class="stat-desc">Articles enregistrés pour cette vente</span>
+        </div>
+        <div class="stat-icon-wrapper"><svg fill="none" height="24" stroke="#0ea5e9" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg></div>
+      </div>
+      <!-- Card 2: Montant HT / TTC -->
+      <div class="card stat-card" data-purpose="stat-card-subtotal">
+        <div class="stat-meta">
+          <span class="stat-label">Montant Brut TTC</span>
+          <span class="stat-value" id="stat-total-brut">495,59 €</span>
+          <span class="stat-desc">Avant remise et escompte</span>
+        </div>
+        <div class="stat-icon-wrapper"><svg fill="none" height="24" stroke="#0284c7" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg></div>
+      </div>
+      <!-- Card 3: Total Net à Payer (Orange Highlight) -->
+      <div class="card stat-card" data-purpose="stat-card-total-net">
+        <div class="stat-meta">
+          <span class="stat-label">Net à Payer</span>
+          <span class="stat-value highlight-orange" id="stat-net-payable">470,81 €</span>
+          <span class="stat-desc">En attente d'encaissement</span>
+        </div>
+        <div class="stat-icon-wrapper orange"><svg fill="none" height="24" stroke="#f59e0b" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="15" x2="9" y1="9" y2="15"></line>
+            <line x1="9" x2="15" y1="9" y2="15"></line>
+          </svg></div>
+      </div>
+    </section>
+    <!-- END: StatCardsSection -->
+    <!-- BEGIN: QuickAddProductCard -->
+    <!-- Form patterned directly after the "Register Attendee" section -->
+    <section class="card" data-purpose="add-product-section">
+      <h2 class="title-card">Rechercher &amp; Ajouter un Produit</h2>
+      <p class="subtitle-card">Recherchez par nom, référence ou code-barres pour l'ajouter directement au ticket en
+        cours.</p>
+      <form class="add-product-form" id="quick-add-form" onsubmit="event.preventDefault(); handleDirectAdd();">
+        <input autocomplete="off" class="input-field" id="direct-search-input"
+          placeholder="ex: REF-401, Clavier sans fil, Souris..." type="text" />
+        <button class="btn btn-primary" id="btn-quick-add" type="submit"><svg fill="none" height="18" stroke="#ffffff"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" x2="12" y1="8" y2="16"></line>
+            <line x1="8" x2="16" y1="12" y2="12"></line>
+          </svg> Ajouter au Panier</button>
+      </form>
+    </section>
+    <!-- END: QuickAddProductCard -->
+    <!-- BEGIN: TwoColumnPOSLayout -->
+    <section class="pos-grid-columns" data-purpose="two-column-workspace">
+      <!-- Left Column: Catalog & Products Table (patterned after "Waiting for Food") -->
+      <div class="card" data-purpose="catalog-card">
+        <h2 class="title-card">
+          <span>📦</span> Catalogue &amp; Articles Disponibles
+        </h2>
+        <p class="subtitle-card">Cliquez sur l'icône bleue pour intégrer l'article dans la commande.</p>
+        <!-- Search Input -->
+        <div class="search-input-wrapper">
+          <svg fill="none" height="16" stroke="#64748b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); pointer-events: none;"
+            viewbox="0 0 24 24" width="16">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+          </svg>
+          <input class="input-field" id="catalog-filter-input" placeholder="Filtrer les produits du catalogue..."
+            type="text" />
+        </div>
+        <!-- Catalog Table -->
+        <div class="table-container">
+          <table class="pos-table" id="catalog-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Réf.</th>
+                <th>Désignation</th>
+                <th style="text-align: right; width: 22%;">Prix U. HT</th>
+                <th style="text-align: center; width: 15%;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="catalog-table-body">
+              <tr>
+                <td><span class="product-code">REF-401</span></td>
+                <td class="product-name-cell">Écran 27" 4K UHD IPS</td>
+                <td style="text-align: right; font-weight: 500;">299,99 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-add-item" onclick="addToCart(101)" title="Ajouter au panier"
+                    type="button">
+                    <!-- Blue check or plus icon directly inspired by image -->
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="20">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="product-code">REF-202</span></td>
+                <td class="product-name-cell">Souris Ergonomique Sans Fil</td>
+                <td style="text-align: right; font-weight: 500;">39,50 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-add-item" onclick="addToCart(102)" title="Ajouter au panier"
+                    type="button">
+                    <!-- Blue check or plus icon directly inspired by image -->
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="20">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="product-code">REF-809</span></td>
+                <td class="product-name-cell">Câble HDMI 2.1 Ultra HD 2m</td>
+                <td style="text-align: right; font-weight: 500;">14,90 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-add-item" onclick="addToCart(103)" title="Ajouter au panier"
+                    type="button">
+                    <!-- Blue check or plus icon directly inspired by image -->
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="20">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="product-code">REF-104</span></td>
+                <td class="product-name-cell">Support Ordinateur Aluminium</td>
+                <td style="text-align: right; font-weight: 500;">34,00 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-add-item" onclick="addToCart(104)" title="Ajouter au panier"
+                    type="button">
+                    <!-- Blue check or plus icon directly inspired by image -->
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="20">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="product-code">REF-550</span></td>
+                <td class="product-name-cell">Clavier Mécanique RGB Pro</td>
+                <td style="text-align: right; font-weight: 500;">89,90 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-add-item" onclick="addToCart(105)" title="Ajouter au panier"
+                    type="button">
+                    <!-- Blue check or plus icon directly inspired by image -->
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="20">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="product-code">REF-732</span></td>
+                <td class="product-name-cell">Casque Audio Bluetooth ANC</td>
+                <td style="text-align: right; font-weight: 500;">119,00 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-add-item" onclick="addToCart(106)" title="Ajouter au panier"
+                    type="button">
+                    <!-- Blue check or plus icon directly inspired by image -->
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="20">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="product-code">REF-915</span></td>
+                <td class="product-name-cell">Hub USB-C 7-en-1 HDMI/SD</td>
+                <td style="text-align: right; font-weight: 500;">42,00 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-add-item" onclick="addToCart(107)" title="Ajouter au panier"
+                    type="button">
+                    <!-- Blue check or plus icon directly inspired by image -->
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="20">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Right Column: Current Active Cart (patterned after "Already Eaten") -->
+      <div class="card" data-purpose="cart-card">
+        <h2 class="title-card">
+          <span>🛒</span> Panier &amp; Produits Sélectionnés
+        </h2>
+        <p class="subtitle-card">Lignes actives prêtes pour la facturation et l'impression.</p>
+        <!-- Search within Cart -->
+        <div class="search-input-wrapper">
+          <svg fill="none" height="16" stroke="#64748b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); pointer-events: none;"
+            viewbox="0 0 24 24" width="16">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+          </svg>
+          <input class="input-field" id="cart-filter-input" placeholder="Filtrer dans le panier..." type="text" />
+        </div>
+        <!-- Cart Table -->
+        <div class="table-container">
+          <table class="pos-table" id="cart-table">
+            <thead>
+              <tr>
+                <th>Produit</th>
+                <th style="text-align: center; width: 22%;">Qté</th>
+                <th style="text-align: right; width: 22%;">Total TTC</th>
+                <th style="text-align: center; width: 12%;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="cart-table-body">
+              <tr>
+                <td>
+                  <div class="product-name-cell">Écran 27" 4K UHD IPS</div>
+                  <div style="font-size: 0.75rem; color: var(--text-light);">REF-401 · 359,99 € TTC</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty(101, -1)" type="button">-</button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn" onclick="updateQty(101, 1)" type="button">+</button>
+                  </div>
+                </td>
+                <td style="text-align: right; font-weight: 600;">359,99 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-remove-item" onclick="removeFromCart(101)"
+                    title="Supprimer la ligne" type="button">
+                    <!-- Red cross icon directly copied from right card in https://lh3.googleusercontent.com/aida-public/AB6AXuCLp_uuaPxJaHgEpiqu6MrKwkYggq3uLisOkrSq2sfMad6KV4ie6JnR9zi6cO7GwKGtSeVUUIAeDBb3BJTids16qPp8VUOL4UHsOxZDKuODdT-gjYC7h6P1wR2MJZuDC2EFSGcBOosvRcHiBKqxw7LnU54cv99jymWIJUTOOE9uJRGY1J321P9J0aUlQGfdPnNnvVt79jN4V_mhKmcTO7v8gInf1Tc3y1RWn_gBQkpu43tJU8y9Tw_T -->
+                    <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="18">
+                      <line x1="18" x2="6" y1="6" y2="18"></line>
+                      <line x1="6" x2="18" y1="6" y2="18"></line>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="product-name-cell">Souris Ergonomique Sans Fil</div>
+                  <div style="font-size: 0.75rem; color: var(--text-light);">REF-202 · 47,40 € TTC</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty(102, -1)" type="button">-</button>
+                    <span class="qty-value">2</span>
+                    <button class="qty-btn" onclick="updateQty(102, 1)" type="button">+</button>
+                  </div>
+                </td>
+                <td style="text-align: right; font-weight: 600;">94,80 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-remove-item" onclick="removeFromCart(102)"
+                    title="Supprimer la ligne" type="button">
+                    <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="18">
+                      <line x1="18" x2="6" y1="6" y2="18"></line>
+                      <line x1="6" x2="18" y1="6" y2="18"></line>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="product-name-cell">Support Ordinateur Aluminium</div>
+                  <div style="font-size: 0.75rem; color: var(--text-light);">REF-104 · 40,80 € TTC</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty(104, -1)" type="button">-</button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn" onclick="updateQty(104, 1)" type="button">+</button>
+                  </div>
+                </td>
+                <td style="text-align: right; font-weight: 600;">40,80 €</td>
+                <td style="text-align: center;">
+                  <button class="action-icon-btn btn-remove-item" onclick="removeFromCart(104)"
+                    title="Supprimer la ligne" type="button">
+                    <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5" viewbox="0 0 24 24" width="18">
+                      <line x1="18" x2="6" y1="6" y2="18"></line>
+                      <line x1="6" x2="18" y1="6" y2="18"></line>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- END: TwoColumnPOSLayout -->
+    <!-- BEGIN: CheckoutSummarySection -->
+    <section class="card checkout-section" data-purpose="checkout-summary-card">
+      <h2 class="title-card">
+        <span>💳</span> Récapitulatif &amp; Règlement
+      </h2>
+      <div class="summary-grid">
+        <!-- Breakdown Values -->
+        <div class="summary-details">
+          <div class="summary-row">
+            <span>Sous-Total HT</span>
+            <span id="summary-ht" style="font-weight: 600;">412,99 €</span>
+          </div>
+          <div class="summary-row">
+            <span>TVA Légale (20%)</span>
+            <span id="summary-tva" style="font-weight: 600;">82,60 €</span>
+          </div>
+          <div class="summary-row">
+            <div class="discount-input-wrapper">
+              <span>Remise Commerciale :</span>
+              <input class="discount-input" id="discount-percent-input" max="100" min="0" type="number" value="5" /> %
+            </div>
+            <span id="summary-discount-amount" style="font-weight: 600; color: var(--accent-red);">-24,78 €</span>
+          </div>
+          <div class="summary-row total-payable">
+            <span>NET À RÉGLER (TTC)</span>
+            <span class="price" id="summary-net-payable">470,81 €</span>
+          </div>
+        </div>
+        <!-- Actions & Payment Methods -->
+        <div class="checkout-actions-wrapper">
+          <!-- Method Selection -->
+          <div class="payment-methods">
+            <button class="btn-method active" onclick="setPaymentMethod(this, 'CB')" type="button">
+              💳 Carte Bancaire
+            </button>
+            <button class="btn-method" onclick="setPaymentMethod(this, 'Espèces')" type="button">
+              💵 Espèces
+            </button>
+            <button class="btn-method" onclick="setPaymentMethod(this, 'Virement')" type="button">
+              🏦 Virement
+            </button>
+          </div>
+          <!-- Major Action CTAs -->
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn btn-success" onclick="printInvoice()" style="flex: 2;" type="button"><svg fill="none"
+                height="18" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                style="margin-right: 8px; vertical-align: middle;" viewbox="0 0 24 24" width="18">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect height="8" width="12" x="6" y="14"></rect>
+              </svg> Encaisser &amp; Imprimer Ticket</button>
+            <button class="btn btn-outline" onclick="resetCart()" style="flex: 1;" type="button">
+              <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewbox="0 0 24 24" width="16">
+                <path d="M3 6h18"></path>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+              Nouveau Ticket
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: CheckoutSummarySection -->
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
